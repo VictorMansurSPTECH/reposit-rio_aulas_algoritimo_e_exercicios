@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exercicio 19</title>
+</head>
+<body>
+    quantidade de chocolates comprados: <input type="number" id="ipt_quantidade"><br><br>
+    <button onclick="calcular()">Calcular</button><br><br>
+    <div id="resultado"></div>
+    <script>
+
+        let quantidade =0;
+        let valor_chocolate = 0;
+        function calcular() {
+          quantidade = Number(ipt_quantidade.value);  
+          let valor_total = quantidade * valor_chocolate;
+          if (quantidade > 12){
+            valor_chocolate = 2.5;
+          }
+          else{
+            valor_chocolate = 3;;
+          }
+          valor_total = quantidade * valor_chocolate;
+          resultado.innerHTML=`o valor da sua compra foi de R$${valor_total.toFixed(2)}`;
+        }
+    </script>
+</body>
+</html>

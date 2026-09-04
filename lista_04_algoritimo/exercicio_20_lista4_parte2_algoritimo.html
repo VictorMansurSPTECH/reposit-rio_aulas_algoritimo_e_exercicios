@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exercicio 20</title>
+</head>
+<body>
+    qual sua meta de economia: <input type="number" id="ipt_meta" ><br>
+    quanto tem guardado : <input type="number" id="ipt_guardado" ><br>
+    <button onclick="calcular()">Analisar economia</button><br><br>
+    <div id="resultado"></div>
+    <script>
+        let meta = 0;
+        let guardado = 0;
+        function calcular() {
+            meta = Number(ipt_meta.value);
+            guardado = Number(ipt_guardado.value);
+            if (guardado >= meta) {
+                resultado.innerHTML = "Parabéns, você atingiu sua meta de economia!";
+            } else {
+                let restante = meta - guardado;
+                resultado.innerHTML = `Você ainda precisa economizar: R$${restante.toFixed(2)}`;
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exercicio 05</title>
+</head>
+<body>
+    insira a quantidade de horas: <input type="number" id="qtd_horas">
+    <button onclick="calc_sono()">calcular sono</button>
+    <div id="exibir"></div>
+</body>
+<script>
+    let horas= 0;
+    function calc_sono() {
+        horas = qtd_horas.value
+        let fs1 = 0.05 * horas
+        let fs2 = 0.45 * horas
+        let fs3 = 0.30 * horas
+        let fsREM = 0.20 * horas
+        exibir.innerHTML = `
+            Ao dormir ${horas} horas, você dormiu:
+            <br>
+            A horas na fase 1: ${fs1.toFixed(2)}
+            <br>
+            B horas na fase 2: ${fs2.toFixed(2)}
+            <br>
+            C horas na fase 3: ${fs3.toFixed(2)}
+            <br>
+            D horas na fase REM: ${fsREM.toFixed(2)}
+        `;
+    }
+</script>
+</html>

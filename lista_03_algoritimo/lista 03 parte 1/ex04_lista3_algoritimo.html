@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exercício 04</title>
+</head>
+<body>
+    <h1>Calculadora de imc!!</h1><br>
+
+    Digite sua altura: <input type="number"  id="altura_usuario">
+    Digite seu peso: <input type="number"  id="peso_usuario"><br>
+    <button onclick="Button_imc()">Ver IMC</button>
+    <div id="exibir_mensg"></div>
+    
+</body>
+<script>
+    function Button_imc() {
+        let ax_peso = Number(peso_usuario.value);
+        let ax_altura = Number(altura_usuario.value);
+
+        let calc_imc = ax_peso/(ax_altura**2);
+
+        exibir_mensg.innerHTML=`para o peso ${ax_peso}<br>
+
+        para a altura ${ax_altura}<br>
+
+        IMC é ${calc_imc.toFixed(2)}`;
+    }
+</script>
+</html>

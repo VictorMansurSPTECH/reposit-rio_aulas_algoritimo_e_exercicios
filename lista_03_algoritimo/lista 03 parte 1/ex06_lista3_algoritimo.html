@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exercicio 06</title>
+</head>
+<body>
+    <h1>Conversor de Moedas da Barbie: De "B-Dollars" para Real</h1>
+
+    quantidade de B-dollars : <input type="number" id="dolares_b"></inpt>
+    valor da cotação : <input type="number" id="inpt_cotacao"><br>
+    <button onclick="exibir_cotacao()">exibir cotação</button> <div id="exibir"></div>
+    
+</body>
+<script>
+    function exibir_cotacao() {
+        let n1 = dolares_b.value
+        let n2 = inpt_cotacao.value
+        let calc = ((n1*n2) - 5.5) 
+        exibir.innerHTML = `Ao converter seus B-Dollars, o dinheiro disponível será: R$${Number(calc)}`
+    }
+</script>
+</html>

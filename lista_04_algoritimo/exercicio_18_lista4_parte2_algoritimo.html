@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exercicio 18</title>
+</head>
+<body>
+    numero 01: <input type="number" id="ipt_numero1"><br><br>
+    numero 02: <input type="number" id="ipt_numero2"><br><br>
+    <div id="div_resultado"></div>
+    <button onclick="testar()">testar</button><br><br>
+</body>
+
+<script>
+    let numero1= 0;
+    let numero2= 0;
+    function testar(){
+        numero1= Number(ipt_numero1.value);
+        numero2= Number(ipt_numero2.value);
+
+        if(numero1 / numero2 == 0){
+            div_resultado.innerHTML= `postivo`;
+        } else {
+            div_resultado.innerHTML= `negativo`;
+
+        }
+    }
+</script>
+</html>

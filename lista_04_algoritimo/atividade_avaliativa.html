@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>avaliação algoritimo</title>
+</head>
+<body>
+    distância que será percorrida, em quilômetros (KM): <input type="number" id="ipt_distancia">
+    velocidade média do carro, em quilômetros por hora (KM/h): <input type="number" id="ipt_velocidade_media">
+    <div id="resultado"></div> <br> <br>
+    <button onclick="simulacao()">Simular</button>
+</body>
+
+<script>
+    let distancia = 0;
+    let velocidade_media = 0;
+    let tanque_carro= 25;
+    let kms_autonomia =0;
+
+    function simulacao() {
+    let distancia = Number(ipt_distancia.value);
+    let velocidade_media = Number(ipt_velocidade_media.value);
+    let mensagem;
+    let tempo_medio_corrida = distancia / velocidade_media; // descobre a quantidade de tempo do percurso
+
+    let porcentagem_gasto_tanque = ((distancia / 10) * 100) / 25; // descobre a quantidade de litros gastos e faz a sua conversão direta em porcentagem do consumo da viagem 
+    let gasto_combustivel = 25 * porcentagem_gasto_tanque / 100; // descobre a quantidade de litros gastos apartir da conversão do porcentagem_gasto_tanque 
+    let sobra_combustivel = tanque_carro - gasto_combustivel;
+    kms_autonomia= sobra_combustivel * 10;
+    tanque_carro = sobra_combustivel; 
+
+    let porcentagem_restante = (tanque_carro * 100) / 25;
+
+    if (tanque_carro >= 7.5) {
+        mensagem = "Continue a rodar!";
+    } else if (tanque_carro <=2.2) {
+        mensagem = `parar imediatamente para reabastecer, ${kms_autonomia.toFixed(0)}KM de autonomia restantes!!!!`;
+    }
+    else{
+        mensagem=`começe a pensar em parar para reabastecer, você só tem mais ${kms_autonomia.toFixed(0)}KM restantes para rodar`;
+    }
+
+    resultado.innerHTML = `Ao percorrer ${distancia} km, em velocidade média de ${velocidade_media} km/h, a viagem durou ${tempo_medio_corrida.toFixed(0)} horas. Ao todo, foram gastos ${gasto_combustivel.toFixed(0)} litro(s) de combustível (${porcentagem_gasto_tanque.toFixed(0)}%). Restam ${tanque_carro.toFixed(0)} litro(s) de combustível (${porcentagem_restante.toFixed(0)}%).<br>${mensagem} <br> <br>`;
+}
+        
+</script>
+</html>

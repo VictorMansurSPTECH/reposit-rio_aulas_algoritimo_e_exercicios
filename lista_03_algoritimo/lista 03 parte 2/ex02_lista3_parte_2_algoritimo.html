@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exercicio</title>
+</head>
+<body>
+    h2>Calculadora de divisões</h2><br><br>
+
+    coloque o primeiro número da operação: <input type="number" id="ipt_numero01"><br><br>
+    coloque o segundo número da operação: <input type="number" id="ipt_numero02"><br>
+    <button onclick="quociente()">Calcular Quociente</button><br> <br>
+    <button onclick="resto()">Calcular Resto</button><br> <br>
+    <button onclick="calcularCompleto()">Calcular Completo</button>
+    <div id="exibir"></div>
+
+
+</body>
+<script>
+    function quociente() {
+        let ax_numero01 = Number(ipt_numero01.value);
+        let ax_numero02 = Number(ipt_numero02.value);
+        let ax_quociente = ax_numero01 / ax_numero02;
+        exibir.innerHTML=`A divisão de N1 por N2 é: ${ax_quociente.toFixed(2)}, sendo que ${ax_numero01} é o primeiro número recebido, ${ax_numero02} é o segundo e ${ax_quociente} é o quociente da divisão`;
+    } 
+    function resto() {
+        let ax_numero01 = Number(ipt_numero01.value);
+        let ax_numero02 = Number(ipt_numero02.value);
+        let ax_resto = ax_numero01 % ax_numero02;
+        exibir.innerHTML=`O resto da divisão de N1 por N2 é: ${ax_resto.toFixed(2)}, sendo que ${ax_numero01} é o primeiro número recebido, ${ax_numero02} é o segundo e ${ax_resto} é o resto da divisão`;
+    }
+    function completo() {
+        let ax_numero01 = Number(ipt_numero01.value);
+        let ax_numero02 = Number(ipt_numero02.value);
+        let ax_quociente = ax_numero01 / ax_numero02;
+        let ax_resto = ax_numero01 % ax_numero02;
+        exibir.innerHTML=`A divisão de ${ax_numero01} por ${ax_numero02} é: ${ax_quociente.toFixed(2)} e o resto dessa divisão é: ${ax_resto.toFixed(2)}, sendo que ${ax_numero01} é o primeiro número recebido, ${ax_numero02} é o segundo, ${ax_quociente} é o quociente da divisão e ${ax_resto} é o resto dessa divisão`;
+    }
+</script>
+
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exercicio 21</title>
+</head>
+<body>
+    frequência do aluno: <input type="number" id="ipt_frequencia"> <br>
+    <button onclick="calcular()">Analisar frequência</button><br><br>
+    <div id="resultado"></div> 
+
+    <script>
+        let frequencia = 0;
+        function calcular() {
+            frequencia = Number(ipt_frequencia.value);
+
+            if (frequencia > 70) {
+                resultado.innerHTML = `<img src="./estudioso.jpeg" alt="">`;
+            } else {
+                resultado.innerHTML = `<img src="./turista.jpeg" alt="">`;
+            }
+        }
+    </script>
+</body>
+</html>

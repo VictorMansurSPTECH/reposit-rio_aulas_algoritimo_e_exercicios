@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exercicio 05</title>
+</head>
+<body>
+    <h1>O KI dos Saiyajins</h1><br>
+
+    Coloque o seu KI básico: <input type="number" id="inpt_KI"><br>
+    transforme se em.... <button onclick="transformacao1()">SSJ1</button>
+     <button onclick="transformacao2()">SSJ2</button>
+     <button onclick="transformacao3()">SSJ3</button><br>
+     <div id="exebir"></div>
+    
+</body>
+<script>
+    function transformacao1() {
+        let n1 = inpt_KI.value
+        let n2 = n1 * 50
+        exebir.innerHTML=`Após se transformar em SSJ1, o ki desse Saiyajin passa a ser de ${Number(n2)} Onde SS2 é o nome da transformação (SSJ, SSJ2 ou SSJ3) e ${Number(n2)} é o valor calculado em d)  `
+    }
+    function transformacao2() {
+        let n1 = inpt_KI.value
+        let n2 = n1 * 100
+        exebir.innerHTML=`Após se transformar em SSJ2, o ki desse Saiyajin passa a ser de ${Number(n2)} Onde SS2 é o nome da transformação (SSJ, SSJ2 ou SSJ3) e ${Number(n2)} é o valor calculado em d)  `
+    }
+    function transformacao3() {
+        let n1 = inpt_KI.value
+        let n2 = n1 * 200
+        exebir.innerHTML=`Após se transformar em SSJ2, o ki desse Saiyajin passa a ser de ${Number(n2)} Onde SS3 é o nome da transformação (SSJ, SSJ2 ou SSJ3) e ${Number(n2)} é o valor calculado em d)  `
+    }
+</script>
+</html>

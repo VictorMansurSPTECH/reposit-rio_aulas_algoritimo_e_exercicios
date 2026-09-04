@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exercício 07</title>
+</head>
+<body>
+    inserir o nome do pet: <input id="inp_nome_pet"><br>
+    inserir a espécie (ex: Cachorro, Gato): <input id="inp_especie"><br>
+    
+    <button onclick="func_indentificar()">identificar pet</button><br>
+</body>
+
+<script>
+    function func_indentificar(){
+        let ficha_abimal= "O seu pet se chama "+ inp_nome_pet.value +" e ele é um"+inp_especie.value
+        alert(ficha_abimal)
+    }
+</script>
+</html>

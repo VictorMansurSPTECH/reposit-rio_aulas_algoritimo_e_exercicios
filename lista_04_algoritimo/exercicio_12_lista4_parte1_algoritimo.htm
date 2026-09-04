@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exercicio 12</title>
+</head>
+<body>
+    <h1>Verificação das finanças </h1>
+
+     valor de seu saldo na conta do banco: <input type="number" id="ipt_saldo_conta">
+     <div id="exibir"></div>
+     <button onclick="verificar()">Verificar</button>
+
+
+</body>
+
+<script>
+    let saldo_conta= 0;
+
+    function verificar(){
+        saldo_conta= Number(ipt_saldo_conta.value);
+        if(saldo_conta == 0){
+            exibir.innerHTML = '<span style="color: black;">Seu saldo é zero.</span>';
+        }
+        else{
+            if(saldo_conta < 0){
+            exibir.innerHTML = '<span style="color: red;">voce está devendo.</span>';
+            }
+            else{
+                if (saldo_conta > 0) {
+                    exibir.innerHTML = '<span style="color: blue;">Saldo positivo.</span>';
+                }
+            }
+        } 
+
+    }
+</script>
+</html>

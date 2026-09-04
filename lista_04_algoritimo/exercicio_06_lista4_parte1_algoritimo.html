@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exercicio 06</title>
+</head>
+<body>
+    quantidade de KWh consumida no mês: <input type="number" id="ipt_KWH_mes">
+    <button onclick="calcular()">calcular conta de luz</button>
+    <div id="exibir"></div>
+</body>
+<script>
+    let KWH_mes = 0;
+    function calcular() {
+        KWH_mes = Number(ipt_KWH_mes.value);
+
+        let conta_luz = KWH_mes * 0.85
+
+        if (conta_luz <100) {
+            let desconto = conta_luz - (conta_luz * 0.10)
+            alert(`A conta do mes com 10% de desconto ficou em R$${desconto}`);
+        } else {
+            alert(`valor da conta ${conta_luz}`);
+        }
+    }
+</script>
+</html>
+

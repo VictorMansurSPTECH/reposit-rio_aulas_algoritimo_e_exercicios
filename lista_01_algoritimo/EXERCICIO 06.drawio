@@ -1,0 +1,136 @@
+<mxfile host="app.diagrams.net">
+  <diagram name="Página-1" id="VRcda2qQ6O1eZQXOR-Wa">
+    <mxGraphModel grid="1" page="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="gyLepOxA68_SWxRQJd3v-4" edge="1" parent="1" source="gyLepOxA68_SWxRQJd3v-1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="gyLepOxA68_SWxRQJd3v-2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="gyLepOxA68_SWxRQJd3v-1" parent="1" style="ellipse;whiteSpace=wrap;html=1;shapeInside=1;aspect=fixed;fillColor=#008a00;fontColor=#ffffff;strokeColor=#005700;" value="" vertex="1">
+          <mxGeometry height="80" width="80" x="380" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="gyLepOxA68_SWxRQJd3v-6" edge="1" parent="1" source="gyLepOxA68_SWxRQJd3v-2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="gyLepOxA68_SWxRQJd3v-5">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="gyLepOxA68_SWxRQJd3v-2" parent="1" style="rounded=1;whiteSpace=wrap;html=1;" value="ENTROU PESSOAS NO ELEVADOR ?" vertex="1">
+          <mxGeometry height="60" width="120" x="360" y="190" as="geometry" />
+        </mxCell>
+        <mxCell id="gyLepOxA68_SWxRQJd3v-8" edge="1" parent="1" source="gyLepOxA68_SWxRQJd3v-5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="gyLepOxA68_SWxRQJd3v-7" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="gyLepOxA68_SWxRQJd3v-11" edge="1" parent="1" source="gyLepOxA68_SWxRQJd3v-5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="gyLepOxA68_SWxRQJd3v-10" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="gyLepOxA68_SWxRQJd3v-5" parent="1" style="rhombus;whiteSpace=wrap;html=1;shapeInside=1;" value="VERIFICAÇÃO" vertex="1">
+          <mxGeometry height="80" width="210" x="320" y="290" as="geometry" />
+        </mxCell>
+        <mxCell id="gyLepOxA68_SWxRQJd3v-9" edge="1" parent="1" source="gyLepOxA68_SWxRQJd3v-7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="gyLepOxA68_SWxRQJd3v-2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="gyLepOxA68_SWxRQJd3v-7" parent="1" style="whiteSpace=wrap;html=1;" value="NÃO" vertex="1">
+          <mxGeometry height="60" width="120" x="75" y="300" as="geometry" />
+        </mxCell>
+        <mxCell id="gyLepOxA68_SWxRQJd3v-13" edge="1" parent="1" source="gyLepOxA68_SWxRQJd3v-10" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="gyLepOxA68_SWxRQJd3v-12" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="gyLepOxA68_SWxRQJd3v-10" parent="1" style="whiteSpace=wrap;html=1;" value="SIM" vertex="1">
+          <mxGeometry height="60" width="120" x="655" y="300" as="geometry" />
+        </mxCell>
+        <mxCell id="gyLepOxA68_SWxRQJd3v-15" edge="1" parent="1" source="gyLepOxA68_SWxRQJd3v-12" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="gyLepOxA68_SWxRQJd3v-14" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="gyLepOxA68_SWxRQJd3v-12" parent="1" style="whiteSpace=wrap;html=1;" value="QUAL O PESSO DO PSSAGEIRO ?" vertex="1">
+          <mxGeometry height="60" width="120" x="655" y="440" as="geometry" />
+        </mxCell>
+        <mxCell id="gyLepOxA68_SWxRQJd3v-20" edge="1" parent="1" source="gyLepOxA68_SWxRQJd3v-14" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="gyLepOxA68_SWxRQJd3v-16">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="gyLepOxA68_SWxRQJd3v-14" parent="1" style="whiteSpace=wrap;html=1;" value="PESO TOTAL + PESSO ATUALIZADO DO PASSAGEIRO" vertex="1">
+          <mxGeometry height="60" width="120" x="655" y="585" as="geometry" />
+        </mxCell>
+        <mxCell id="gyLepOxA68_SWxRQJd3v-19" edge="1" parent="1" source="gyLepOxA68_SWxRQJd3v-16" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="gyLepOxA68_SWxRQJd3v-18" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="gyLepOxA68_SWxRQJd3v-27" edge="1" parent="1" source="gyLepOxA68_SWxRQJd3v-16" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="gyLepOxA68_SWxRQJd3v-26" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="gyLepOxA68_SWxRQJd3v-32" edge="1" parent="1" source="gyLepOxA68_SWxRQJd3v-16" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="gyLepOxA68_SWxRQJd3v-31" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="gyLepOxA68_SWxRQJd3v-16" parent="1" style="rhombus;whiteSpace=wrap;html=1;shapeInside=1;" value="CONFERINDO PESO E FUNCIONALIDADE" vertex="1">
+          <mxGeometry height="115" width="184" x="623" y="700" as="geometry" />
+        </mxCell>
+        <mxCell id="gyLepOxA68_SWxRQJd3v-22" edge="1" parent="1" source="gyLepOxA68_SWxRQJd3v-18" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="gyLepOxA68_SWxRQJd3v-21" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="gyLepOxA68_SWxRQJd3v-18" parent="1" style="whiteSpace=wrap;html=1;" value="SE PESO &amp;gt;=400 KG AND ELEV SUBIR" vertex="1">
+          <mxGeometry height="60" width="120" x="390" y="727.5" as="geometry" />
+        </mxCell>
+        <mxCell id="gyLepOxA68_SWxRQJd3v-25" edge="1" parent="1" source="gyLepOxA68_SWxRQJd3v-21" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="gyLepOxA68_SWxRQJd3v-14">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="gyLepOxA68_SWxRQJd3v-21" parent="1" style="whiteSpace=wrap;html=1;" value="&#39;ALGUEM PRECISA SAIR&amp;nbsp;" vertex="1">
+          <mxGeometry height="60" width="200" x="350" y="585" as="geometry" />
+        </mxCell>
+        <mxCell id="gyLepOxA68_SWxRQJd3v-29" edge="1" parent="1" source="gyLepOxA68_SWxRQJd3v-26" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="gyLepOxA68_SWxRQJd3v-28" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="gyLepOxA68_SWxRQJd3v-26" parent="1" style="whiteSpace=wrap;html=1;" value="SE PESO &amp;gt;= 500 KG AND ELEV DESCER" vertex="1">
+          <mxGeometry height="60" width="120" x="919" y="727.5" as="geometry" />
+        </mxCell>
+        <mxCell id="gyLepOxA68_SWxRQJd3v-30" edge="1" parent="1" source="gyLepOxA68_SWxRQJd3v-28" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" target="gyLepOxA68_SWxRQJd3v-14">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="gyLepOxA68_SWxRQJd3v-28" parent="1" style="whiteSpace=wrap;html=1;" value="&#39;ALGUEM DEVE DESCER para o elevador descer" vertex="1">
+          <mxGeometry height="60" width="120" x="919" y="587.5" as="geometry" />
+        </mxCell>
+        <mxCell id="gyLepOxA68_SWxRQJd3v-34" edge="1" parent="1" source="gyLepOxA68_SWxRQJd3v-31" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="gyLepOxA68_SWxRQJd3v-33" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="gyLepOxA68_SWxRQJd3v-31" parent="1" style="whiteSpace=wrap;html=1;" value="PESO ADEQUADO PARA FUNCIONAMENTO&amp;nbsp;" vertex="1">
+          <mxGeometry height="60" width="120" x="655" y="922.5" as="geometry" />
+        </mxCell>
+        <mxCell id="gyLepOxA68_SWxRQJd3v-37" edge="1" parent="1" source="gyLepOxA68_SWxRQJd3v-33" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="gyLepOxA68_SWxRQJd3v-36" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="gyLepOxA68_SWxRQJd3v-39" edge="1" parent="1" source="gyLepOxA68_SWxRQJd3v-33" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="gyLepOxA68_SWxRQJd3v-38" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="gyLepOxA68_SWxRQJd3v-33" parent="1" style="rhombus;whiteSpace=wrap;html=1;shapeInside=1;" value="O ELEVADOR ESTÁ" vertex="1">
+          <mxGeometry height="92.5" width="184" x="623" y="1040" as="geometry" />
+        </mxCell>
+        <mxCell id="gyLepOxA68_SWxRQJd3v-43" edge="1" parent="1" source="gyLepOxA68_SWxRQJd3v-36" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="gyLepOxA68_SWxRQJd3v-42" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="gyLepOxA68_SWxRQJd3v-36" parent="1" style="whiteSpace=wrap;html=1;" value="SUBINDO" vertex="1">
+          <mxGeometry height="60" width="120" x="910" y="940" as="geometry" />
+        </mxCell>
+        <mxCell id="gyLepOxA68_SWxRQJd3v-41" edge="1" parent="1" source="gyLepOxA68_SWxRQJd3v-38" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="gyLepOxA68_SWxRQJd3v-40" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="gyLepOxA68_SWxRQJd3v-38" parent="1" style="whiteSpace=wrap;html=1;" value="DESCENDO" vertex="1">
+          <mxGeometry height="60" width="120" x="380" y="940" as="geometry" />
+        </mxCell>
+        <mxCell id="gyLepOxA68_SWxRQJd3v-45" edge="1" parent="1" source="gyLepOxA68_SWxRQJd3v-40" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=0.25;entryY=0;entryDx=0;entryDy=0;" target="gyLepOxA68_SWxRQJd3v-2">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="50" y="970" />
+              <mxPoint x="50" y="170" />
+              <mxPoint x="390" y="170" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="gyLepOxA68_SWxRQJd3v-40" parent="1" style="whiteSpace=wrap;html=1;" value="DESTINO" vertex="1">
+          <mxGeometry height="60" width="120" x="180" y="940" as="geometry" />
+        </mxCell>
+        <mxCell id="gyLepOxA68_SWxRQJd3v-44" edge="1" parent="1" source="gyLepOxA68_SWxRQJd3v-42" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" target="gyLepOxA68_SWxRQJd3v-2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="gyLepOxA68_SWxRQJd3v-42" parent="1" style="whiteSpace=wrap;html=1;" value="DESCENDO" vertex="1">
+          <mxGeometry height="60" width="120" x="1110" y="940" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

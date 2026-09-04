@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exercício 05 </title>
+</head>
+<body>
+    insira a sua nota de escola: <input id="inp_nota"><br>
+
+    <button onclick="opinião_avó()">opinião da avó</button>
+    <button onclick="opinião_mãe()">opinião da mãe</button>
+    <div id="div_exibir">
+        vai ter um texto aqui
+    </div>
+</body>
+
+<script>
+    function opinião_avó() {
+       // alert('Muito bem, que neto inteligente, porque tirou '+ inp_nota.value)
+       div_exibir.innerHTML =('Muito bem, que neto inteligente, porque tirou '+ inp_nota.value) //ele substitui o alert, por padrão usamos a div para realizar esse tipo de mensagem!.                                                                                                                                                                                                              
+    }
+
+    function opinião_mãe() {
+        div_exibir.innerHTML=("Não fez mais que tua obrigação com essa nota " + inp_nota.value)
+    }
+</script>
+</html>

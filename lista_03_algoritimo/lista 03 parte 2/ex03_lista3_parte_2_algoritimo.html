@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exercicio 03</title>
+</head>
+<body>
+    <h2>nota de atividade avaliativa</h2><br> <br>
+    Coloque o seu nome: <input type="text" id="ipt_nome"><br><br>
+    valor da Ativ. Avaliativa 1: <input type="number" id="ipt_ativ_avaliativa01"><br>
+    valor da Ativ. Avaliativa 2: <input type="number" id="ipt_ativ_avaliativa02"><br>
+    valor da Ativ. Avaliativa 3: <input type="number" id="ipt_ativ_avaliativa03"><br>
+    <div id="exibir"></div><br>
+    <button onclick="notas()">Mostrar Nota</button>
+</body>
+<script>
+    let nome_usuário ='';
+    let nota_01 = 0;
+    let nota_02 = 0;
+    let nota_03 = 0;
+    function notas() {
+        nota_01 =Number(ipt_ativ_avaliativa01.value)
+        nota_02 =Number(ipt_ativ_avaliativa02.value)
+        nota_03 =Number(ipt_ativ_avaliativa03.value)
+
+        let soma = nota_01 + nota_02 + nota_03;
+        let media = soma / 3;
+
+        exibir.innerHTML=`A soma das três atividades:${soma}\n ${nome_usuário},a média das suas atividades é:${media} `
+
+        ipt_ativ_avaliativa01.value = '';
+        ipt_ativ_avaliativa02.value = '';
+        ipt_ativ_avaliativa03.value = '';
+    }
+</script>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exercício 17</title>
+</head>
+<body>
+    digite um número: <input type="number" id="ipt_numero"><br><br>
+    <div id="div_resultado"></div>
+    <button onclick="verificarnumero()">Verificar</button><br><br>
+</body>
+<script>
+    let numero=0;
+    function verificarnumero(){
+        numero= Number(ipt_numero.value);
+
+        if(numero %2 == 0){
+            div_resultado.innerHTML= `o número ${numero} é par`;
+        } else {
+            div_resultado.innerHTML= `o número ${numero} é ímpar`;
+        }
+        
+    }
+</script>
+</html>

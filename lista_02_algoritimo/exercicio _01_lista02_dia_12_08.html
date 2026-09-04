@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head> 
+<body> <h1>cadastro de <b>cidade natal</b> e <b> nascimento</b></h1>
+
+    inserir cidade natal: <input id="inp_cidade"><br>
+    inserir ano de nascimento: <input id="inp_nascimento"> <br>
+    <button onclick="cidade_e_ano_de_nascimento()"> cadastrar </button> <br>
+</body>
+
+<script>
+    function cidade_e_ano_de_nascimento () {
+        let lule = 'cidade natal: ' + inp_cidade.value + " data nascimento: " + inp_nascimento.value
+        alert(lule) 
+    }
+
+</script>
+</html>

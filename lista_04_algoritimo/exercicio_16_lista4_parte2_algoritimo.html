@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exercicio 16</title>
+</head>
+<body>
+    quantidade de homens: <input type="number" id="ipt_homens"><br><br>
+    quantidade de mulheres: <input type="number" id="ipt_mulheres"><br><br>
+    <div id="div_resultado"></div>
+    <button onclick="ligar_elevador()">Ligar elevador</button><br><br>
+
+    <style>
+        .text-success{
+            color: green;
+        }
+        .text-danger{
+            color: red;
+        }
+    </style>
+</body>
+<script>
+    let homens= 0;
+    let mulheres= 0;
+    function ligar_elevador(){
+        homens= Number(ipt_homens.value);
+        mulheres= Number(ipt_mulheres.value);
+        let total= (homens * 90) + (mulheres * 70);
+
+        if(total <= 500){
+            div_resultado.innerHTML= `<p class="text-success">o elevador pode ser ligado, o peso total é: ${total} kg</p>`;
+        } else {
+            div_resultado.innerHTML= `<p class="text-danger">o elevador não pode ser ligado, o peso total é: ${total} kg</p>`;
+        }
+    }
+</script>
+</html>

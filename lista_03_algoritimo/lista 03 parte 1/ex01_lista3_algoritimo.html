@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exercício 03</title>
+</head>
+<body>
+    Digite a sua idade:<input type="number" id="ipt_idade_usuario"> 
+    <button onclick="aposentadoria_M()">Aposentadoria Mulher</button>
+    <button onclick="aposentadoria_H()">Aposentadoria Homem</button>
+    <div id="exibir_mensg"></div>
+</body>
+<script>
+    function aposentadoria_M() {
+        let n1 = ipt_idade_usuario.value
+        let calc = (60 - (Number(ipt_idade_usuario.value)))
+        exibir_mensg.innerHTML= `O tempo restante para a aposentadoria é de :${calc}`
+    }
+    function aposentadoria_H() {
+        let n1 = ipt_idade_usuario.value
+        let calc = (70 -(Number(ipt_idade_usuario.value)))
+        exibir_mensg.innerHTML =`o tempo restante para aposetadoria é : ${calc}`
+    }
+</script>
+</html>

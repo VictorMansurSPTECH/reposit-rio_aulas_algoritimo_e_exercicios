@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exercicio 04</title>
+</head>
+<body>
+    valor da pizza: <input type="number" id="ipt_valor_pizza"> <br> <br>
+    quantidade de amigos: <input type="number" id="ipt_qtd_amigos"> <br> <br>
+    <div id="exibir"></div>
+    <button onclick="rola_a_pizza()">Rola a pizza?</button> 
+</body>
+
+<script>
+    let valor=0;
+    let amigos = 0;
+    function rola_a_pizza() {
+        amigos = Number(ipt_qtd_amigos.value)
+        valor = Number(ipt_valor_pizza.value)
+        let media_valor = valor/amigos
+
+        if (media_valor > 20) {
+            exibir.innerHTML=`Deu ruim! Pizza muito cara!`;
+        } else {
+            exibir.innerHTML=`Cada amigo vai pagar R$${media_valor} pela pizza`;
+
+        }
+        
+    }
+</script>
+</html>

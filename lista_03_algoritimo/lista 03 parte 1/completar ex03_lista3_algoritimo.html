@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exercicio 03</title>
+</head>
+<body>
+    <h1>Bem-vindo ao sistema de economia de pasagem!</h1><br>
+    Qual o valor da passagem? : <input type="number" step="0.01" id="passagem_trem"><br>
+    Quantas viagens vc fará no mês?: <input type="number" id="viagem_mes">
+    <div id="exibir_mensg"></div>
+    <button onclick="ver_economia()">Ver Economia</button>
+</body>
+<script>
+    function ver_economia() {
+        let n1 = passagem_trem.value
+        let n2 = viagem_mes.value
+        exibir_mensg.innerHTML=`o valor economizado é:${( (Number(passagem_trem.value)) * (Number(viagem_mes.value))) / 2.7}R$`
+    }
+
+</script>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exercicio 02</title>
+</head>
+<body>
+    <h1>controle de refrigerante</h1>
+
+    quantas latinhas de refrigerante toma por dia: <input type="number" id="ipt_latinhas_p">
+
+    <button onclick="quantos_refris()">Quantos refris</button> <br> <br>
+
+    <div id="exibir"></div>
+
+
+</body>
+
+<script>
+    let latinhas_diarias = 0;
+
+    function quantos_refris() {
+        latinhas_diarias = Number(ipt_latinhas_p.value)
+
+        let latinhas_ano = latinhas_diarias * 365
+
+        if (latinhas_ano > 500) {
+            exibir.innerHTML=`Cuidado com a diabetes`;
+        } else {
+            exibir.innerHTML=`a quantidade de latinhas por ano ${latinhas_ano}`;
+        }
+    }
+</script>
+</html>

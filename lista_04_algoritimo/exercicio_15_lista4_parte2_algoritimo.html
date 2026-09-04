@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exercico 15</title>
+</head>
+<body>
+     nota 01: <input type="number" id="ipt_nota1"><br><br>
+     nota 02: <input type="number" id="ipt_nota2"><br><br>
+     <div id="div_resultado"></div>
+        <button onclick="calcularMedia()">Calcular Média</button><br><br>
+</body>
+<script>
+    let nota01= 0;
+    let nota02= 0;
+    function calcularMedia(){
+        nota01= Number(ipt_nota1.value);
+        nota02= Number(ipt_nota2.value);
+        let media= (nota01 + nota02) / 2;
+        if(media >= 6){
+            div_resultado.innerHTML= `parabéns vc foi aprovado com média: ${media}`;
+        } else {
+            div_resultado.innerHTML= `infelizmente vc foi reprovado com média: ${media}`;
+        }
+    }
+</script>
+</html>

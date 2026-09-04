@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exericio 01</title>
+</head>
+<body>
+    <h2>Calculadora Básica</h2><br><br>
+
+    coloque o primeiro número da operação: <input type="number" id="ipt_numero01"><br><br>
+    coloque o segundo número da operação: <input type="number" id="ipt_numero02"><br>
+
+    <button onclick="somar()">Somar</button><br><br>
+    <button onclick="subtrair()">Subtrair</button><br><br>
+    <button onclick="multiplicar()">Multiplicar</button><br><br>
+    <button onclick="dividir()">dividir</button><br> <br>
+
+    <div id="exibir"></div>
+</body>
+<script>
+    function somar() {
+        let ax_numero01 = Number(ipt_numero01.value)
+        let ax_numero02 = Number(ipt_numero02.value)
+        let ax_soma = ax_numero01 + ax_numero02
+        exibir.innerHTML=` A soma entre ${ax_numero01} e ${ax_numero02} é ${ax_soma}`;
+    }
+    function subtrair() {
+        let ax_numero01 = Number(ipt_numero01.value)
+        let ax_numero02 = Number(ipt_numero02.value)
+        let ax_subtrair = ax_numero01 - ax_numero02
+        exibir.innerHTML=` A subtração entre ${ax_numero01} e ${ax_numero02} é ${ax_subtrair}`;
+    }
+    function multiplicar() {
+        let ax_numero01 = Number(ipt_numero01.value)
+        let ax_numero02 = Number(ipt_numero02.value)
+        let ax_multiplicar = ax_numero01 * ax_numero02
+        exibir.innerHTML=` A multiplicação entre ${ax_numero01} e ${ax_numero02} é ${ax_multiplicar}`;
+    }
+    function dividir() {
+        let ax_numero01 = Number(ipt_numero01.value)
+        let ax_numero02 = Number(ipt_numero02.value)
+        let ax_dividir = ax_numero01 / ax_numero02
+        exibir.innerHTML=` A divisão entre ${ax_numero01} e ${ax_numero02} é ${ax_dividir}`;
+    }
+</script>
+</html>

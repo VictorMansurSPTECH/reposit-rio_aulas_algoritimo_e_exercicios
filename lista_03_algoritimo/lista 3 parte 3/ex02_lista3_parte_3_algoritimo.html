@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exercicio 02</title>
+</head>
+<body>
+    <h1>Bem - vindo ao caixa eletrônico 24HRS</h1> <br> <br>
+
+    Valor a ser sacado ou retirado: <input type="number" id="ipt_valores"> <br> <br>
+
+    <button onclick="retirar()">Retirar</button>
+    <button onclick="depositar()">Depositar</button> <br> <br>
+    <div id="exibir"></div>
+
+</body>
+<script>
+
+    let saldo = 0;
+    function depositar() {
+        let valor_inserido = Number(ipt_valores.value);
+        let inseri_saldo = saldo += valor_inserido;
+        exibir.innerHTML=`Deposito de R$${valor_inserido} efutuado! saldo atual ${saldo}`;
+        ipt_valores.value = '';
+    }
+    function retirar() {
+        let valor_inserido = Number(ipt_valores.value);
+        let inseri_saldo = saldo -= valor_inserido;
+        exibir.innerHTML=`retirade de R$${valor_inserido} efutuado! saldo atual ${saldo}`;
+        ipt_valores.value = '';
+    }
+
+
+</script>
+</html>

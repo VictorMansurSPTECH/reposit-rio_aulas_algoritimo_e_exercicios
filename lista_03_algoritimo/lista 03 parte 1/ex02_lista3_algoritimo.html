@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 03</title>
+</head>
+<body>
+    <h1>Bem-vindo ao divisor de pizza!!!</h1><br>
+
+    Digite neste campo a quantidade de amigos que vão dividir a pizza!:<input type="number" id="qtd_amigos"><br>
+    Digite o valor da pizza!:<input type="number" id="valor_pizza"><br>
+    <button onclick="lovepizza()">#LovePizza</button>
+    <div id="exibir_mensg"></div>
+
+
+</body>
+<script>
+    function lovepizza() {
+        let n1 = valor_pizza.value
+        let n2 = qtd_amigos.value
+        let n3 = (Number(n1.value)) / (Number(n2.value))
+        exibir_mensg.innerHTML=`O valor a ser pago por cada amigo:${n3}R$`
+    }
+</script>
+</html>

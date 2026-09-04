@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exercicio 08</title>
+</head>
+<body>
+    valor da passagem do ônibus: <input type="number" id="ipt_passagem">
+    quantidade de viagens: <input type="number" id="ipt_viagens">
+    distancia do trabalho: <input type="number" id="ipt_distancia">
+    <br>
+    <button onclick="calcular()">Calcular vt</button>
+    <div id="exibir"></div>
+    <br>
+    
+</body>
+<script>
+    
+    let passagem = 0;
+    let viagens = 0;
+    let distancia = 0;
+    function calcular() {
+        passagem = Number(ipt_passagem.value);
+        viagens = Number(ipt_viagens.value);
+        distancia = Number(ipt_distancia.value);
+        
+        let viagem_de_carro = distancia * 0.75;
+        let viagem_de_onibus = passagem * viagens;
+        let viagem_carro_mes = viagem_de_carro * viagens;
+
+
+
+        exibir.innerHTML = `O valor gasto com transporte público é de R$${viagem_de_onibus.toFixed(2)}<br>
+        O valor gasto com uma viagem particular é de R$${viagem_de_carro.toFixed(2)}<br>
+        O valor gasto com transporte particular em um mês é de R$${viagem_carro_mes.toFixed(2)}`;
+
+    }
+</script>
+</html>

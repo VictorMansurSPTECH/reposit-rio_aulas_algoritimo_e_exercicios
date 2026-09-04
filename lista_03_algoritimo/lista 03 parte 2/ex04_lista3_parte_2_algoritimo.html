@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exercicio 04</title>
+</head>
+<body>
+    nome do aluno: <input type="text" id="ipt_nome_aluno">
+    nota continuada: <input type="number" id="ipt_nota_continuada">
+    nota semestral: <input type="number" id="ipt_nota_semestral"><br>
+    <button id="media_tot"></button>
+    <div id="exibir_media"></div>
+
+</body>
+<script>
+    let nome_usuário ="";
+    let nota_continuada = 0 ;
+    let nota_semestre =  0 ;
+    function name() {
+        nome_usuário = ipt_nome_aluno.value
+        nota_continuada = Number(ipt_nota_continuada.value)
+        nota_semestre = Number(ipt_nota_semestral.value)
+        media = (nota_semestre/ 0.40) + (nota_semestre * 0.60)
+        exibir_media.innerHTML=`A média de ${nome_usuário} será de ${media}`;
+    }
+
+</script>
+</html>

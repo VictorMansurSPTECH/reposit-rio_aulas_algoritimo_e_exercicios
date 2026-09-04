@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exercicio 07</title>
+</head>
+<body>
+    <h1>Financiamento da Casa própria</h1> <br> <br>
+
+    valor da renda familiar: <input type="number" id="ipt_renda_familiar">
+    valor da prestação: <input type="number" id="ipt_valor_prestacao"> <br> <br>
+    <div id="exibir"></div> <br> <br>
+    <button onclick="verificar()">verificar Financiamento</button>
+
+</body>
+<script>
+    let renda_familiar=0;
+    let valor_prestacao=0;
+
+    function verificar() {
+        renda_familiar = Number(ipt_renda_familiar.value);
+        valor_prestacao=Number(ipt_valor_prestacao.value);
+        let calc_finan= (valor_prestacao/renda_familiar)*100;
+
+        if (calc_finan > 30) {
+            alert(`precisa urgentemente de renda extra!!`)
+        } else {
+            exibir.innerHTML=`a prestacao é igual a ${calc_finan.toFixed(0)}% de renda da familia`;
+        }
+    }
+</script>
+</html>

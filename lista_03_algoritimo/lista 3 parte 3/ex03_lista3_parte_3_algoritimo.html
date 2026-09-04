@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exercício 3</title>
+</head>
+<body>
+    <h1>relatório mensal</h1> <br> <br>
+
+    valor da venda das peças: <input type="number" id="ipt_valor_pecas"> <br> <br>
+    valor recebido com a venda do serviço : <input type="number" id="ipt_valor_servico"> <br><br>
+    percentual do imposto sobre os valores recebidos: <input type="number" id="ipt_valor_imposto"> <br> <br>
+    valor gasto no mês : <input type="number" id="ipt_gasto_mes"> <br> <br>
+    <div id="exibir"></div>
+
+    <button onclick="acumular()">Acumular</button>
+</body>
+<script>
+    let vlr_pecas = 0;
+    let vlr_servico = 0;
+    let vlr_iposto = 0;
+    let gst_mes = 0;
+    let mes = 0;
+    let saldo_final_mes = 0;
+
+    function acumular() {
+        mes++;
+        vlr_pecas = Number(ipt_valor_pecas.value);
+        vlr_servico = Number(ipt_valor_servico.value);
+        vlr_iposto = Number(ipt_valor_imposto.value);
+        gst_mes = Number(ipt_gasto_mes.value);
+
+        let valor_total = vlr_pecas + vlr_servico;
+        let calc_imposto = (vlr_iposto / 100) * valor_total;
+        let saldo_final = valor_total - (calc_imposto + gst_mes);
+        saldo_final_mes += saldo_final;
+
+        exibir.innerHTML += `Resumo mês ${mes}<br>
+            Total recebido = R$${valor_total.toFixed(2)}<br>
+            Valor do Imposto = R$${calc_imposto.toFixed(2)}<br>
+            Saldo Final de R$${saldo_final.toFixed(2)}<br>
+            Acumulado até o Momento = R$${saldo_final_mes.toFixed(2)}<br><br>`;
+
+        ipt_valor_pecas.value = '';
+        ipt_valor_servico.value = '';
+        ipt_valor_imposto.value = '';
+        ipt_gasto_mes.value = '';
+    }
+</script>
+</html>
