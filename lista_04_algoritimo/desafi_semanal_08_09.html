@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Cadastro de Alunos de Hogwarts</title>
+</head>
+<body>
+
+    <div id="divEtapa1">
+        <h1>Cadastro de Alunos de Hogwarts</h1>
+
+        Nome do aluno: <input type="text" id="ipt_nome"><br><br>
+        Idade: <input type="number" id="ipt_idade"><br><br>
+        Altura (em metros): <input type="number" id="ipt_altura" step="0.01"><br><br>
+        Endereço: <input type="text" id="ipt_endereco"><br><br>
+
+        Escolha sua casa:
+        <select id="ipt_casa">
+            <option value="">Selecione uma casa</option>
+            <option value="Grifinória">Grifinória</option>
+            <option value="Sonserina">Sonserina</option>
+            <option value="Corvinal">Corvinal</option>
+            <option value="Lufa-Lufa">Lufa-Lufa</option>
+        </select><br><br>
+
+        <div id="div_erro" style="color:red;"></div><br>
+
+        <button onclick="validarAluno()">Validar Aluno</button>
+    </div>
+
+    <div id="divEtapa3" style="display:none;">
+        <div id="div_etapa3_msg"></div>
+    </div>
+
+    <div id="divEtapa4" style="display:none;">
+        <div id="div_etapa4_msg"></div><br>
+        <button onclick="continuarInserindoAlunos()">Continuar inserindo alunos</button>
+    </div>
+
+</body>
+<script>
+    let grifinoria = 240;
+    let sonserina = 250;
+    let corvinal = 249;
+    let lufalufa = 235;
+
+    let forcaGrifinoria = 0;
+    let forcaSonserina = 0;
+    let forcaCorvinal = 0;
+    let forcaLufaLufa = 0;
+
+    let nomeAluno = '';
+    let idadeAluno = 0;
+    let alturaAluno = 0;
+    let enderecoAluno = '';
+    let casaEscolhida = '';
+    let casaAluno = '';
+    let iaq = 0;
+
+    function validarAluno() {
+        nomeAluno = ipt_nome.value;
+        idadeAluno = ipt_idade.value;
+        alturaAluno = ipt_altura.value;
+        enderecoAluno = ipt_endereco.value;
+        casaEscolhida = ipt_casa.value;
+
+        let camposVazios = '';
+
+        if (nomeAluno == '') {
+            alert('Opa, preencha o nome do aluno');
+            camposVazios = camposVazios + 'Nome, ';
+        }
+        if (idadeAluno == '') {
+            alert('Opa, sem idade não tem como estudar...');
+            camposVazios = camposVazios + 'Idade, ';
+        }
+        if (enderecoAluno == '') {
+            alert('Opa, sem endereço, não é possível enviar a carta de convite');
+            camposVazios = camposVazios + 'Endereço, ';
+        }
+        if (casaEscolhida == '') {
+            alert('Não quer entrar em nenhuma casa??');
+            camposVazios = camposVazios + 'Casa, ';
+        }
+        if (alturaAluno == '') {
+            alert('Opa, o aluno tem uma altura');
+            camposVazios = camposVazios + 'Altura, ';
+        }
+
+        if (camposVazios != '') {
+            div_erro.innerHTML = `Os seguintes campos estão vazios: ${camposVazios}`;
+        } else {
+            div_erro.innerHTML = '';
+            idadeAluno = Number(idadeAluno);
+            alturaAluno = Number(alturaAluno);
+            verificarValores();
+        }
+    }
+
+    function verificarValores() {
+        let alturaValida = false;
+        let idadeValida = false;
+
+        if (alturaAluno <= 0) {
+            alert('Você é invisível?');
+        } else if (alturaAluno > 2.0) {
+            alert('Você é filho de gigante?');
+        } else {
+            alert('Uia, você é um aluno perfeito para estudar em Hogwarts');
+            alturaValida = true;
+        }
+
+        if (idadeAluno < 12) {
+            alert('Você não tem idade mínima para estudar em Hogwarts ainda. Mas não desista!');
+        } else {
+            idadeValida = true;
+        }
+
+        if (alturaValida) {
+            if (idadeValida) {
+                alocarCasa();
+            }
+        }
+    }
+
+    function alocarCasa() {
+        let escolaCheia = false;
+
+        if (grifinoria >= 250) {
+            if (sonserina >= 250) {
+                if (corvinal >= 250) {
+                    if (lufalufa >= 250) {
+                        escolaCheia = true;
+                    }
+                }
+            }
+        }
+
+        if (escolaCheia) {
+            alert('Que pena... A escola já está cheia. Caso algum aluno desista do curso, te enviaremos uma coruja');
+            return;
+        }
+
+        casaAluno = casaEscolhida;
+
+        if (casaEscolhida == 'Grifinória') {
+            if (grifinoria >= 250) {
+                casaAluno = '';
+            }
+        }
+        if (casaEscolhida == 'Sonserina') {
+            if (sonserina >= 250) {
+                casaAluno = '';
+            }
+        }
+        if (casaEscolhida == 'Corvinal') {
+            if (corvinal >= 250) {
+                casaAluno = '';
+            }
+        }
+        if (casaEscolhida == 'Lufa-Lufa') {
+            if (lufalufa >= 250) {
+                casaAluno = '';
+            }
+        }
+
+        if (casaAluno == '') {
+            let menor = grifinoria;
+            casaAluno = 'Grifinória';
+
+            if (sonserina < menor) {
+                menor = sonserina;
+                casaAluno = 'Sonserina';
+            }
+            if (corvinal < menor) {
+                menor = corvinal;
+                casaAluno = 'Corvinal';
+            }
+            if (lufalufa < menor) {
+                menor = lufalufa;
+                casaAluno = 'Lufa-Lufa';
+            }
+        }
+
+        let cor = 'red';
+
+        if (casaAluno == 'Grifinória') {
+            grifinoria = grifinoria + 1;
+            cor = 'red';
+        } else if (casaAluno == 'Sonserina') {
+            sonserina = sonserina + 1;
+            cor = 'green';
+        } else if (casaAluno == 'Corvinal') {
+            corvinal = corvinal + 1;
+            cor = 'blue';
+        } else if (casaAluno == 'Lufa-Lufa') {
+            lufalufa = lufalufa + 1;
+            cor = 'yellow';
+        }
+
+        divEtapa1.style.display = 'none';
+        divEtapa3.style.display = 'block';
+
+        div_etapa3_msg.innerHTML = `
+            <div style="font-size:60px;">&#128231;</div>
+            <b>Parabéns, você foi aceito e pode estudar em Hogwarts</b><br><br>
+            <p style="color:${cor};">Parabéns, você vai para a casa ${casaAluno}</p>
+            <button onclick="irParaQuadribol()">Posso jogar quadribol?</button>
+            <button onclick="cadastrarMaisAlunos()">Cadastre Mais Alunos</button>
+        `;
+    }
+
+    function irParaQuadribol() {
+        divEtapa3.style.display = 'none';
+        divEtapa4.style.display = 'block';
+
+        iaq = (alturaAluno / 2) * (alturaAluno / 2) * 100;
+
+        let mensagemPosicao = '';
+        let multiplicador = 0;
+
+        if (iaq <= 50) {
+            mensagemPosicao = 'Que pena! Você não pode fazer parte do time';
+        } else if (iaq <= 69) {
+            mensagemPosicao = 'Parabéns, você pode ser Batedor';
+            multiplicador = 1.2;
+        } else if (iaq <= 79) {
+            mensagemPosicao = 'Parabéns, você pode ser artilheiro';
+            multiplicador = 1.3;
+        } else if (iaq <= 89) {
+            mensagemPosicao = 'Parabéns, você pode ser Goleiro';
+            multiplicador = 1.5;
+        } else {
+            mensagemPosicao = 'Parabéns, você pode ser Apanhador';
+            multiplicador = 2.0;
+        }
+
+        if (multiplicador > 0) {
+            let forcaJogador = iaq * multiplicador;
+
+            if (casaAluno == 'Grifinória') {
+                forcaGrifinoria = forcaGrifinoria + forcaJogador;
+            } else if (casaAluno == 'Sonserina') {
+                forcaSonserina = forcaSonserina + forcaJogador;
+            } else if (casaAluno == 'Corvinal') {
+                forcaCorvinal = forcaCorvinal + forcaJogador;
+            } else if (casaAluno == 'Lufa-Lufa') {
+                forcaLufaLufa = forcaLufaLufa + forcaJogador;
+            }
+        }
+
+        div_etapa4_msg.innerHTML = `
+            <p>${mensagemPosicao}</p>
+            <p style="color:red;">${forcaGrifinoria} Grifinória</p>
+            <p style="color:green;">${forcaSonserina} Sonserina</p>
+            <p style="color:blue;">${forcaCorvinal} Corvinal</p>
+            <p style="color:yellow;">${forcaLufaLufa} Lufa-Lufa</p>
+        `;
+    }
+
+    function cadastrarMaisAlunos() {
+        divEtapa3.style.display = 'none';
+        limparFormulario();
+    }
+
+    function continuarInserindoAlunos() {
+        divEtapa4.style.display = 'none';
+        limparFormulario();
+    }
+
+    function limparFormulario() {
+        ipt_nome.value = '';
+        ipt_idade.value = '';
+        ipt_altura.value = '';
+        ipt_endereco.value = '';
+        ipt_casa.value = '';
+        div_erro.innerHTML = '';
+        divEtapa1.style.display = 'block';
+    }
+</script>
+</html>
