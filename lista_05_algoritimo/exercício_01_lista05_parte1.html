@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exercício 5</title>
+</head>
+<body>
+    digite qual a temperatura atual: <input type="number" id="ipt_temperatura">
+    <div id="exibir"></div> <br> <br>
+    <button onclick="analisar()">Analisar</button> <br>
+</body>
+
+<script>
+    let temp_atual=0;
+    function analisar() {
+        temp_atual = Number(ipt_temperatura.value)
+        if (temp_atual >=21 && temp_atual <=24) {
+            exibir.innerHTML=`${temp_atual}C: Temperatura confortável :D`;
+        } else {
+            exibir.innerHTML=`${temp_atual}C: temperatura DESCONFORTÁVEL :C`;
+        }
+    }
+</script>
+</html>

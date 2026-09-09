@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exercício 2</title>
+</head>
+<body>
+    digite sua renda: <input type="number" id="ipt_renda"> <br>
+    digite sua renda familiar: <input type="number" id="ipt_renda_familiar">
+    <button onclick="verificar()"> Verificar Ajuda</button> <br>
+    <div id="exibir"></div>
+</body>
+<script>
+    let renda_pessoal=0;
+    let renda_familiar =0;
+
+    function verificar() {
+        renda_pessoal= Number(ipt_renda.value);
+        renda_familiar= Number(ipt_renda_familiar.value);
+        if (renda_pessoal <= 1500 && renda_familiar <= 2100) {
+            alert('Você terá direito!');
+        }
+        else{
+            alert('Você NÃO terá direito');
+        }
+    }
+</script>
+</html>
