@@ -11,4 +11,18 @@
     <button onclick="verificar()">verificar</button> <br>
     <div id="exibir"></div>
 </body>
+<script>
+    let nota =0;
+    let frequencia=0;
+
+    function verificar() {
+        nota= Number(ipt_nota.value);
+        frequencia= Number(ipt_frequencia.value);
+        if (nota >= 6 && frequencia >= 75) {
+            alert('Parabéns! Aprovado!')
+        } else {
+            alert('"Infelizmente, não foi desta vez')
+        }
+    }
+</script>
 </html>
