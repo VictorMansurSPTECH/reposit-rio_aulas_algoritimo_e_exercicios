@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exercicio 4</title>
+</head>
+<body>
+    insira o modo de pagamento dentre as seguintes opções:Dinheiro,Cartão de débito,Cartão de crédito ou Boleto: <input type="text" id="ipt_met_pagamento"> <br>
+    <div id="exibir"></div>
+    <button onclick="analisar()"> Analisar comprar</button>
+</body>
+<script>
+    let met_pagamento="";
+    function analisar() {
+        met_pagamento=ipt_met_pagamento.value;
+        if ( met_pagamento =='dinheiro' || met_pagamento=='débito') {
+            exibir.innerHTML=`Você terá que pagar a vista`;
+        } else if (met_pagamento =='crédito' || met_pagamento=='boleto'){
+            exibir.innerHTML=`Pagamento poderá ser parcelado`;
+        }
+    }
+</script>
+</html>
