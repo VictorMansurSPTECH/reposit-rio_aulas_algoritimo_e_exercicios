@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exercício 2</title>
+</head>
+<body>
+    insira a nota do ENEM: <input type="number" id="ipt_enem"> <br>
+    insira a nota do vestibular interno do aluno: <input type="text" id="ipt_nota_inteira_vest"> <br>
+    <button onclick="analisar()">Avaliação</button>
+</body>
+<script>
+    let nota_enem=0;
+    let nota_vestebular=0;
+    function analisar() {
+        nota_enem= Number(ipt_enem.value)
+        nota_vestibular= Number(ipt_nota_inteira_vest.value)
+
+        if (nota_enem >= 800 || nota_vestibular >=700) {
+            alert("Parabéns! Aprovado");
+        } else {
+            alert("Tente semestre que vem!");
+        }
+    }
+</script>
+</html>
