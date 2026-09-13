@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exercício 2</title>
+</head>
+<body>
+    tamanho da tela do celular encontrado: <input type="number" id="ipt_tamnaho"> <br>
+    cor do celular encontrado, dentre as opções: <select id="ipt_cor">
+        <option value="preto">preto</option>
+        <option value="prata">prata</option>
+        <option value="azul">azul</option>
+        <option value="Vermelho">Vermelho</option>
+    </select> <br>
+    <button onclick="analisar()">Será que ele gosta?</button> <br>
+    <div id="exibir"></div>
+</body>
+<script>
+    let tamanho=0;
+    let cor ='';
+
+    function analisar() {
+        tamanho= Number(ipt_tamnaho.value);
+        cor = ipt_cor.value
+
+        if ((cor == 'prata' || cor=='preto' ) && tamanho>=6.5) {
+            exibir.innerHTML = '<img src="./pessoa feliz.jpeg" alt="Pessoa feliz">'
+        } else {
+            exibir.innerHTML = '<img src="./pessoa triste.jpeg" alt="Pessoa triste">'
+        }
+    }
+</script>
+</html>

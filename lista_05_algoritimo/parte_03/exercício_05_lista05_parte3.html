@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exercicio 5</title>
+</head>
+<body>
+    insira a temperatura em °C: <input type="number" id="ipt_temperatura"> <br> <br>
+    insira a umidade: <input type="number" id="ipt_umidade"> <br> <br>
+    <button onclick="calcular()">Calcular</button> <br> <br>
+    <div id="resultado"></div>
+<script>
+    let temperatura = 0;
+    let umidade = 0;
+    function calcular() {
+        temperatura = Number(ipt_temperatura.value);
+        umidade = Number(ipt_umidade.value);
+        if ((umidade <0 || umidade >100)) {
+            alert("umidade invalida, insira um valor entre 0 e 100");
+            resultado.innerHTML = "";
+
+        }else{
+            if((temperatura >=22 && temperatura <=23) && umidade <60 ){
+                resultado.innerHTML = "Clima agradavel";
+            }
+            else{
+                resultado.innerHTML = "Clima desagradavel";
+            }
+        }
+    }
+</script>
+</body>
+</html>

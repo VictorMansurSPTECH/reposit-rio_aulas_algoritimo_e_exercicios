@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exercicio 4</title>
+</head>
+<body>
+    <h1>autenticação segura</h1> <br>
+
+    insira o login: <input type="text" id="ipt_login"> <br> <br>
+    insira a senha: <input type="password" id="ipt_senha"> <br> <br>
+    insira a informação secreta: <input type="text" id="ipt_info"> <br> <br>
+    <button onclick="autenticar()">Autenticar</button>
+    <div id="resultado"></div>
+
+</body>
+<script>
+    let login = "";
+    let senha = "";
+    let info = "";
+
+    function autenticar() {
+        login = ipt_login.value;
+        senha = ipt_senha.value;
+        info = ipt_info.value;
+
+        if (login === "ana" && senha === "braga" && info === "1949") {
+            resultado.innerHTML = "Autenticação bem-sucedida!";
+        } else {
+            resultado.innerHTML = "Credenciais inválidas.";
+        }
+    }
+</script>
+</html>

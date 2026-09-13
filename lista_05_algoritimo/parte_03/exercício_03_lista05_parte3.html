@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exercicio 3</title>
+</head>
+<body>
+    <h1>Cálculo do Valor da Passagem</h1> <br>
+    tipo de passageiro: <select id="ipt_tipo">
+        <option value="estudante">Estudante</option>
+        <option value="idoso">Idoso/PNE</option>
+        <option value="comum">Comum</option>
+    </select> <br> <br>
+
+    tipo de passagem: <select id="ipt_passagem">
+        <option value="passagem_unica">Passagem Única</option>
+        <option value="passagem_integracao">Integração</option>
+    </select> <br> <br>
+    <button onclick="calcular()">Calcular</button> <br> <br>
+    <div id="resultado"></div>
+</body>
+<script>
+    let passagem_unica = 4.40;
+    let passagem_integracao = 5.90;
+    let tipo_passagem= "";
+    let tipo_passageiro= "";
+    function calcular() {
+        tipo_passageiro = ipt_tipo.value;
+        tipo_passagem = ipt_passagem.value;
+        let valor = 0;
+        if (tipo_passageiro == "estudante") {
+            if (tipo_passagem == "passagem_unica") {
+                valor = passagem_unica * 0.5;
+                resultado.innerHTML = "O valor da passagem é: R$" + valor;
+            } else {
+                valor = passagem_integracao * 0.5;
+                resultado.innerHTML = "O valor da passagem é: R$" + valor;
+            }
+        } else if (tipo_passageiro == "idoso") {
+            if (tipo_passagem == "passagem_unica") {
+                valor = 0;
+                resultado.innerHTML = "O valor da passagem é gratuita: R$" + valor;
+            } else {
+                valor = 0;
+                resultado.innerHTML = "O valor da passagem é gratuita: R$" + valor;
+            }
+        } else if (tipo_passageiro == "comum") {
+            if (tipo_passagem == "passagem_unica") {
+                valor = passagem_unica;
+                resultado.innerHTML = "O valor da passagem é: R$" + valor;
+            } else {
+                valor = passagem_integracao;
+                resultado.innerHTML = "O valor da passagem é: R$" + valor;
+            }
+        }
+    }
+</script>
+</html>
