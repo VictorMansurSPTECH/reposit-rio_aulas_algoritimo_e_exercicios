@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exercício 6</title>
+</head>
+<body>
+    quantidade de itens comprados: <input type="number" id="ipt_qtd_itens"> <br> <br>
+    valor total da compra: <input type="number" id="ipt_valor_compra"> <br> <br>
+    programa de fidelidade: <select id="ipt_fidelidade">
+        <option>sim</option>
+        <option>não</option>
+    </select> <br> <br>
+    cupom: <input type="text" id="ipt_cupom"> <br> <br>
+    <BUtton onclick="analisar()">Verificar desconto</BUtton>
+    <div id="exibir"></div>
+</body>
+<script>
+    let qtd_intens=0;
+    let vlr_compra=0;
+    let fidelidade="";
+    let cupom="";
+    function analisar() {
+        qtd_intens= number(ipt_qtd_itens.value);
+        vlr_compra=number(ipt_valor_compra.value);
+        fidelidade= ipt_fidelidade.value;
+        cupom= ipt_cupom.value;
+        if (qtd_intens >=3 && (fidelidade =="sim" || cupom =="PROMO10")) {
+            alert("Desconto aplicado!");
+        } else {
+            alert("Compra não elegível para desconto");
+        }
+    }
+</script>
+</html>

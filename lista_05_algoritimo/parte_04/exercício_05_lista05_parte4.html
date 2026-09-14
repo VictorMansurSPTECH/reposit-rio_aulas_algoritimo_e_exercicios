@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exercício 5</title>
+</head>
+<body>
+    documento do passageiro está válido: <select id="ipt_doc">
+        <option>sim</option>
+        <option>não</option>
+    </select> <br> <br>
+    passageiro fez check-in online:<select id="ipt_check">
+        <option>sim</option>
+        <option>não</option>
+    </select> <br> <br>
+    quantas horas de antecedência o passageiro chegou ao aeroporto: <input type="number" id="ipt_horas"> <br> <br>
+    <button onclick="verif()">Verificar embarque</button> <br>
+    <div id="exibir"></div>
+</body>
+<script>
+    let docu=0;
+    let check=0;
+    let horas = 0;
+    function verif() {
+        docu= ipt_doc.value
+        check= ipt_check.value
+        horas = Number(ipt_horas.value);
+        if (docu =="sim" && (check =="sim" || horas <=2)) {
+            alert("Embarque liberado" );
+        } else {
+            alert("Embarque negado");
+        }
+    }
+</script>
+</html>
