@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exercício 1</title>
+</head>
+<body>
+    nota do vestibular interno : <input type="number" id="ipt_nota_vestibular"> <br>
+    nota enem: <input type="number" id="ipt_nota_enem"> <br>
+    nota redação: <input type="number" id="ipt_redacao"> <br>
+    <button onclick="analisar()">verificar nota</button> <br>
+    <div id="exibir"></div>
+</body>
+<script>
+    let nota_vestibular=0;
+    let nota_redacao=0;
+    let nota_enem=0;
+    function analisar() {
+        nota_enem= Number(ipt_nota_enem.value);
+        nota_redacao= Number(ipt_redacao.value);
+        nota_vestibular= Number(ipt_nota_vestibular.value);
+
+        if ((nota_vestibular >= 700) || (nota_enem >= 650 && nota_redacao > 0)) {
+            alert("Aprovado!")
+        } else {
+            alert("não aprovado")
+        }
+    }
+</script>
+</html>

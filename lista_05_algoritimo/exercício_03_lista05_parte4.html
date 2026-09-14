@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exercício 3</title>
+</head>
+<body>
+    renda familiar per capita do aluno: <input type="number" id="ipt_percapita"> <br> <br>
+    média escolar do aluno: <input type="number" id="ipt_media"> <br> <br>
+     aluno é atleta federado?: <select id="ipt_federal">
+        <option>sim</option>
+        <option>não</option>
+     </select> <br> <br>
+     <button onclick="analisar()">Verificar bolsa</button> <br>
+     <div id="exibir"></div>
+</body>
+<script>
+    let percapita=0;
+    let media=0;
+    let federado="";
+    function analisar() {
+        percapita=Number(ipt_percapita.value);
+        media=Number(ipt_media.value);
+        federado=ipt_federal.value;
+        if ((percapita <=800 && media>=8) || (federado =="sim" && media >=6)) {
+            alert("Bolsa integral concedida!")
+        } else {
+            alert("Bolsa não concedida");
+        }
+    }
+</script>
+</html>

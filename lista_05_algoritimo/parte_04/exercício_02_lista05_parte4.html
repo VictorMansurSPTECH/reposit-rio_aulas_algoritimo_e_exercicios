@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exercício 2</title>
+</head>
+<body>
+    renda mensal: <input type="number" id="ipt_renda_mensal"> <br> <br>
+    score de crédito: <input type="number" id="ipt_credito"> <br> <br>
+    quantos anos o cliente é correntista: <input type="number" id="ipt_anos">
+    possui dívidas?: <select id="ipt_dividas">
+        <option>sim</option>
+        <option>não</option>
+    </select>
+    <button onclick="analisar()">verificar</button>
+</body>
+<script>
+    let renda_mens=0;
+    let score_credito=0;
+    let anos_corrent=0;
+    let dividas="";
+    function analisar() {
+        randa_mens= Number(ipt_renda_mensal.value);
+        score_credito=Number(ipt_credito.value);
+        anos_corrent=Number(ipt_anos.value);
+        dividas=ipt_dividas.value;
+        if ((renda_mens >=3000 && score_credito >=600)|| (anos_corrent >=5 && dividas =="não")) {
+            alert("Empréstimo aprovado");
+        } else {
+            alert("Empréstimo negado");
+        }
+    }
+</script>
+</html>
