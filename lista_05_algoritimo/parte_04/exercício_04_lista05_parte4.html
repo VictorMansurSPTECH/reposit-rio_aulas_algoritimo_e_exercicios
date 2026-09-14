@@ -6,6 +6,31 @@
     <title>exercício 4</title>
 </head>
 <body>
-    
+    idade da pessoa: <input type="number" id="ipt_idade"> <br> <br>
+    pessoa tem ingresso VIP: <select id="ipt_ingresso_vip">
+        <option>sim</option>
+        <option>não</option>
+    </select> <br> <br>
+    a pessoa tem convite especial: <select id="ipt_convite_esp">
+        <option>sim</option>
+        <option>não</option>
+    </select> <br>
+    <button onclick="analisar()"> Verificar </button> <br>
+    <div id="exibir"></div>
 </body>
+<script>
+    let idade=0;
+    let ingresso_vip=0;
+    let ingresso_eps=0;
+    function analisar() {
+        idade= Number(ipt_idade.value)
+        ingresso_eps = ipt_convite_esp.value
+        ingresso_vip = ipt_ingresso_vip.value
+        if ((idade >=18 ) && (ingresso_eps=="sim" || ingresso_vip=="sim")) {
+            alert("Acesso liberado à área VIP" );
+        } else {
+            alert("Acesso negado");
+        }
+    }
+</script>
 </html>
