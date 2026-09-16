@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exercício 8</title>
+</head>
+<body>
+    idade da pessoa: <input type="number" id="ipt_idade"> <br> <br>
+    possui alguma comorbidade?: <select id="ipt_comorbidade">
+        <option>sim</option>
+        <option>não</option>
+    </select> <br> <br>
+    cadastro no sistema de saúde está em dia?: <select id="ipt_cadastro">
+        <option>sim</option>
+        <option>não</option>
+    </select> <br> <br>
+    <button onclick="analisar()">Verificar prioridade</button> <br>
+    <div id="exibir"></div>
+</body>
+<script>
+    let idade = 0;
+    let comorbidade = "";
+    let cadastro = "";
+
+    function analisar() {
+        idade = Number(ipt_idade.value);
+        comorbidade = ipt_comorbidade.value;
+        cadastro = ipt_cadastro.value;
+
+        if ((idade >= 60 || comorbidade == "sim") && cadastro == "sim") {
+            alert("Vacinação prioritária liberada");
+        } else {
+            alert("Vacinação prioritária não liberada");
+        }
+    }
+</script>
+</html>

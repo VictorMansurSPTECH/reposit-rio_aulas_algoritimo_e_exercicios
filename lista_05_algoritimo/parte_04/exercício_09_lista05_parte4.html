@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exercício 9</title>
+</head>
+<body>
+    plano do aluno: <select id="ipt_plano">
+        <option>Premium</option>
+        <option>Básico</option>
+    </select> <br> <br>
+    hora atual (0 a 23): <input type="number" id="ipt_hora"> <br> <br>
+    check-in biométrico foi validado?: <select id="ipt_biometria">
+        <option>sim</option>
+        <option>não</option>
+    </select> <br> <br>
+    <button onclick="analisar()">Liberar catraca</button> <br>
+    <div id="exibir"></div>
+</body>
+<script>
+    let plano = "";
+    let hora = 0;
+    let biometria = "";
+
+    function analisar() {
+        plano = ipt_plano.value;
+        hora = Number(ipt_hora.value);
+        biometria = ipt_biometria.value;
+
+        if ((plano == "Premium" || (plano == "Básico" && hora >= 6 && hora <= 22)) && biometria == "sim") {
+            alert("Acesso liberado");
+        } else {
+            alert("Acesso negado");
+        }
+    }
+</script>
+</html>
