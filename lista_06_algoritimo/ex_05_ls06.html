@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exercício 5</title>
+</head>
+<body>
+    senha ao usuário: <input type="text" id="ipt_senha"> <br> <br>
+    <button onclick="analisar()">analisar</button> <br>
+    <div id="exibir"></div>
+</body>
+<script>
+    let senha="";
+    function analisar() {
+        senha= ipt_senha.value
+        let senha_mai=senha.toUpperCase()
+        let senha_min=senha.toLowerCase()
+        let sn_cript =senha_mai.replaceAll("A","@").replaceAll('E','3') && senha_min.replaceAll("a","@").replaceAll('e','3')
+        exibir.innerHTML=`${sn_cript}`;
+    }
+</script>
+</html>
