@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exercício 2</title>
+</head>
+<body>
+    frase ao usuário: <input type="text" id="ipt_frase"> <br> <br>
+    <button onclick="analisar()">analisar</button> <br> <br>
+    <div id="exibir"></div>
+</body>
+<script>
+    let ax_frase ="";
+    function analisar() {
+        ax_frase = ipt_frase.value
+        let ax_inicio = ax_frase.includes('teste') || ax_frase.includes('abc') || ax_frase.includes('spam');
+        if (ax_inicio == true) {
+            exibir.innerHTML=`<span style="color: red;">frase Inválida</span>`;
+            
+        } else {
+            exibir.innerHTML=`<span style="color: green;">frase válida</span>`;
+        }
+    }
+</script>
+</html>

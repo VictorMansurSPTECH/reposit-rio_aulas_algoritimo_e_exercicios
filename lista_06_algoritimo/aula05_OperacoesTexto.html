@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Operando com texto</title>
+</head>
+<body>
+    <h2>Operando com texto</h2>
+    Entre com o texto:
+        <input id="ipt_frase" onkeyup="processar()"> <br><br>
+    <div id="div_msg"></div>
+</body>
+<script>
+    function processar() {
+        let ax_frase = ipt_frase.value;
+        let ax_inicio = ax_frase.startsWith('www') || ax_frase.startsWith('http');
+        let ax_result = 'DEU ZEBRA!!!';
+
+        if (ax_inicio) {
+            ax_result = 'BINGO!!!'
+        }
+        div_msg.innerHTML = `O tamanho da frase é: ${ax_frase.length}`
+        div_msg.innerHTML += `<br>A frase começa com www ou http: ${ax_result}`
+        div_msg.innerHTML += `<br>A frase termina com .com: ${ax_frase.endsWith('.com')}`
+        div_msg.innerHTML += `<br>A frase contem turma: ${ax_frase.includes('turma', 10)}`
+        div_msg.innerHTML += `<br>Qual a posicão da string turma: ${ax_frase.indexOf('turma')}`
+        div_msg.innerHTML += `<br>A frase em maiúsculo: ${ax_frase.toUpperCase()} - frase original ${ax_frase}`
+        div_msg.innerHTML += `<br>A frase em minúsculo: ${ax_frase.toLowerCase()} - frase original ${ax_frase}`
+        
+        div_msg.innerHTML += `<br>O último caracter é: ${ax_frase[ax_frase.length -1]}`
+
+        if (ax_frase.length < 10) div_msg.innerHTML +=`<br>Faltam digitar ${ax_frase.length - 10} caracteres`;
+        if (ax_frase.length > 10) div_msg.innerHTML +=`<br>Você digitou ${10 - ax_frase.length} a mais`;
+        
+
+    }
+</script>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exercício 3</title>
+</head>
+<body>
+    frase ao usuário: <input type="text" id="ipt_frese_usuario"> <br> <br>
+    palavra ao usuário: <input type="text" id="ipt_palavra_usuario"> <br> <br>
+    <button onclick="analisar()">Analisar Frase</button> <br>
+    <div id="exibir"></div>
+</body>
+<script>
+    let frase_usuario="";
+    let palavra_usuario="";
+    function analisar() {
+        frase_usuario= ipt_frese_usuario.value ;
+        palavra_usuario= ipt_palavra_usuario.value;
+        if (frase_usuario.startsWith(palavra_usuario) && frase_usuario.endsWith(palavra_usuario)) {
+            exibir.innerHTML=`A frase começa e termina com ${palavra_usuario}!`;
+        } else if (frase_usuario.startsWith(palavra_usuario)) {
+
+                exibir.innerHTML=`A frase começa com ${palavra_usuario}!`;
+
+        }else if (frase_usuario.endsWith(palavra_usuario)) {
+                exibir.innerHTML=`A frase termina com ${palavra_usuario}!`;
+
+        }else {
+                exibir.innerHTML=`A frase não começa e nem termina com ${palavra_usuario}!`;
+        }
+    }
+</script>
+</html>

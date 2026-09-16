@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exercício 01</title>
+</head>
+<body>
+    frase ao usuário: <input type="text" id="ipt_usuario"> <br>
+    <button onclick="verificar()"> analisar frase</button> <br>
+    <div id="exibir"></div>
+    
+</body>
+
+<script>
+    function verificar() {
+        let frase = ipt_usuario.value
+        let cont_frase = frase.length
+        exibir.innerHTML=`O tamanho da frase é: ${cont_frase}`;
+
+        if (cont_frase <10) {
+            exibir.innerHTML += `<br><span style="color: red;">Frase Curta!</span>`
+        } else {
+            exibir.innerHTML += `<br><span style="color: blue;">Frase longa!</span>`
+        }
+    }
+</script>
+</html>
+
