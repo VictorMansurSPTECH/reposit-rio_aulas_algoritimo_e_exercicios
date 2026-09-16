@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exercício 10</title>
+</head>
+<body>
+    concluiu o curso básico?: <select id="ipt_basico">
+        <option>sim</option>
+        <option>não</option>
+    </select> <br> <br>
+    média no curso básico: <input type="number" id="ipt_media_basico"> <br> <br>
+    nota no teste de nivelamento: <input type="number" id="ipt_nota_nivelamento"> <br> <br>
+    documentação está completa?: <select id="ipt_doc">
+        <option>sim</option>
+        <option>não</option>
+    </select> <br> <br>
+    <button onclick="analisar()">Verificar matrícula</button> <br>
+    <div id="exibir"></div>
+</body>
+<script>
+    let basico = "";
+    let media_basico = 0;
+    let nota_nivelamento = 0;
+    let doc = "";
+
+    function analisar() {
+        basico = ipt_basico.value;
+        media_basico = Number(ipt_media_basico.value);
+        nota_nivelamento = Number(ipt_nota_nivelamento.value);
+        doc = ipt_doc.value;
+
+        if (((basico == "sim" && media_basico >= 7) || nota_nivelamento >= 8) && doc == "sim") {
+            alert("Matrícula liberada para o curso avançado");
+        } else {
+            alert("Matrícula não liberada");
+        }
+    }
+</script>
+</html>
