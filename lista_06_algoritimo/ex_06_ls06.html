@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Insira uma Frase<input type="text" id="ipt_frase" >
+    Insira o número da letra que deseja ver<input id="ipt_num" type="text " onkeyup="analisar()" >
+    <div id="div_msg"></div>
+</body>
+<script>
+    function analisar(){
+        let frase = ipt_frase.value;
+        let num = Number(ipt_num.value);
+        let texto = "";
+
+        texto = `A primeira letra é: ${frase[0]}<br>
+                A ${num}ª letra é: ${frase[num - 1]}<br>
+                A última letra é: ${frase[frase.length-1]}`
+
+        div_msg.innerHTML = texto;
+
+    }
+</script>
+</html>
