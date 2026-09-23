@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Verificador de Letras</title>
+  </head>
+  <body>
+    Insira uma letra<input type="text" id="ipt_letra1" />
+    <br>
+    Insira uma letra<input type="text" id="ipt_letra2" />
+    <br>
+    <button onclick="verificar()">Verificar letras</button>
+    <div id="div_msg"></div>
+
+    <script>
+      let palavra = "morango";
+
+      function verificar(){
+          let letra1 = ipt_letra1.value;
+          let letra2 = ipt_letra2.value;
+          let mensagem = "";
+
+          if(palavra.includes(letra1)){
+              mensagem = `A letra ${letra1} aparece na palavra secreta`;
+          } else {
+              mensagem = `A letra ${letra1} não aparece na palavra secreta`;
+          }
+
+          if(palavra.includes(letra2)){
+              mensagem += `<br>A letra ${letra2} aparece na palavra secreta`;
+          } else {
+              mensagem += `<br>A letra ${letra2} não aparece na palavra secreta`;
+          }
+
+          div_msg.innerHTML = mensagem;
+      }
+    </script>
+  </body>
+</html>
