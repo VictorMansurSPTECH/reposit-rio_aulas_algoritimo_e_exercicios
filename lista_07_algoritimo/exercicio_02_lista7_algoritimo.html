@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exercício 2</title>
+</head>
+<body>
+    digite uma frase: <input type="text" id="ipt_frase"> <br>
+    <button onclick="analisar()">Diga algo sobre a matéria de Algoritmos</button><br>
+    <div id="exibir"></div>
+</body>
+<script>
+    let frase="";
+    let contagem =7;
+    let mensagem="";
+    function analisar() {
+        frase = ipt_frase.value
+        while (contagem >=0) {
+            mensagem += `${frase} <br>`
+            contagem--
+        }
+        exibir.innerHTML= `${mensagem} <br>`
+    }
+</script>
+</html>
+

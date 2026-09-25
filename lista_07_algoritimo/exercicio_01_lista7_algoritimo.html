@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exercício 1</title>
+</head>
+<body>
+    <button onclick="analisar()">Contar...</button> <br>
+    <div id="exibir"></div>
+</body>
+<script>
+
+    function analisar() {
+            let contagem = 1;
+            let mensagem = "";
+        while (contagem <=15 ) {
+            mensagem += `${contagem} <br>`
+            contagem++
+        }
+        exibir.innerHTML= mensagem
+    }
+</script>
+</html>

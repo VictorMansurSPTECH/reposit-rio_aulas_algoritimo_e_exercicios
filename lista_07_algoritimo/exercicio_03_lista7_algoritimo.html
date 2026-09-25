@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exercício 3</title>
+</head>
+<body>
+    insira uma mensagem: <input type="text" id="ipr_mensagem"> <br>
+    <button onclick="analisar()">Mensagem</button> <br>
+    <div id="exibir"></div>
+</body>
+<script>
+    let  frase="";
+    let contagem= 7;
+    let mensagem =""
+    function analisar() {
+        frase= ipr_mensagem.value
+        while (contagem >= 0) {
+            mensagem += `${contagem}-${frase}`
+            contagem--
+        }
+        exibir.innerHTML=`${mensagem} <br>`
+    }
+</script>
+</html>

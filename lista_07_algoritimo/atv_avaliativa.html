@@ -14,7 +14,8 @@
     </select> <br> <br>
     A quantidade vendida: <input type="number" id="ipt_qtd_combus"> <br> <br>
     hora da venda: <input type="number" id="ipt_hr_venda"> <br> <br>
-    <button onclick="analisar()">analisar venda</button>
+    <button onclick="analisar()">analisar venda</button> <br> <br>
+    <button onclick="encerrar_dia()">Encerrar o Dia</button>
     <div id="exibir"></div>
 </body>
 <script>
@@ -25,39 +26,102 @@
     let contador_desconto=0;
     let contador_numero_venda=0;
     let mensagem = "";
-
+    let gasolina=0;
+    let etanol=0;
+    let disel=0;
+    
     function analisar() {
+        
         tipo_combustivel = ipt_tipo_combustivel.value
         hora_venda= Number(ipt_hr_venda.value)
         qtd_combustivel= Number(ipt_qtd_combus.value)
         let conta_flu =0;
         let desconto_flu=0
         let valor_com_desconto=0;
-
+        let verf_horario=(hora_venda >=0 && hora_venda<=6 || hora_venda >=21 && hora_venda<=24) && qtd_combustivel >= 20
+        contador_numero_venda = contador_numero_venda +1
         if (tipo_combustivel == "etanol") {
             
             conta_flu = 4.44 * qtd_combustivel
             contador_venda += conta_flu
             valor_com_desconto = conta_flu
+            etanol += qtd_combustivel
 
-            if ((hora_venda >=0 && hora_venda<=6 || hora_venda >=21 && hora_venda<=24) && qtd_combustivel >= 20) {
+
+            if (verf_horario == true) {
                 desconto_flu = conta_flu * 0.048
                 contador_desconto += desconto_flu
                 valor_com_desconto =conta_flu - desconto_flu
                 contador_venda -= desconto_flu
             }
         }
+        if (tipo_combustivel == "gasolina") {
+            
+            conta_flu = 6.49 * qtd_combustivel
+            contador_venda += conta_flu
+            valor_com_desconto = conta_flu
+            gasolina+= qtd_combustivel
 
-        mensagem += `venda;${valor_com_desconto.toFixed(2)}R$ <br> desconto horário:${desconto_flu.toFixed(2)}R$ <br> tipo combustível:${tipo_combustivel} <br><br> ${contador_venda}<br>`;
+            if (verf_horario == true) {
+                desconto_flu = conta_flu * 0.0505
+                contador_desconto += desconto_flu
+                valor_com_desconto =conta_flu - desconto_flu
+                contador_venda -= desconto_flu
+            }
+        }
+        if (tipo_combustivel == "disel") {
+            
+            conta_flu = 4.39 * qtd_combustivel
+            contador_venda += conta_flu
+            valor_com_desconto = conta_flu
+            disel+= qtd_combustivel
+
+            if (verf_horario == true) {
+                desconto_flu = conta_flu * 0.0303
+                contador_desconto += desconto_flu
+                valor_com_desconto =conta_flu - desconto_flu
+                contador_venda -= desconto_flu
+            }
+        }
+
+
+
+        mensagem += `<br><br>
+        -----------------------------------------------------------<br>
+        contador de vendas: ${contador_numero_venda} <br><br>
+        venda:R$${valor_com_desconto.toFixed(2)} <br> <br>
+        desconto horário:R$ ${desconto_flu.toFixed(2)}<br><br>
+        tipo combustível:${tipo_combustivel}<br><br> 
+        qtd_entanol: ${etanol} <br><br> 
+        qtd_gasolina: ${gasolina} <br><br>
+        qtd_disel: ${disel} <br><br>
+        -----------------------------------------------------------
+        `;
+        exibir.innerHTML= mensagem
+    }
+
+
+
+
+
+
+    function encerrar_dia() {
+        mensagem=""
+        let totalLitros = gasolina + etanol + disel;
+
+        
+        mensagem += `
+            <br><br>
+            Resumo do Faturamento<br>
+            Valor Total Recebido = R$ ${contador_venda.toFixed(2)}<br>
+            Valor Total dos Descontos = R$ ${contador_desconto.toFixed(2)}<br>
+            <br>
+            Quantidade de Gasolina Vendida = ${gasolina.toFixed(2)} litros == ${((gasolina/totalLitros)*100).toFixed(1)} %<br>
+            Quantidade de Etanol Vendida = ${etanol.toFixed(2)} litros == ${((etanol/totalLitros)*100).toFixed(1)} %<br>
+            Quantidade de Diesel Vendida = ${disel.toFixed(2)} litros == ${((disel/totalLitros)*100).toFixed(1)} %<br>
+        `;
         exibir.innerHTML= mensagem
     }
 
 </script>
 </html>
-
-
- 
-
-gasolina - 6.49
-disel - 4.39
-etanol- 4.44
