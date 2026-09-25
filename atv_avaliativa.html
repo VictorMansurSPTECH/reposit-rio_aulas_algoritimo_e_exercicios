@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>D</title>
+</head>
+<body>
+    selecione o tipo do qtd_combustivel:
+    <select id="ipt_tipo_combustivel">
+        <option value="gasolina">gasolina</option>
+        <option value="disel">disel</option>
+        <option value="etanol">etanol</option>
+    </select> <br> <br>
+    A quantidade vendida: <input type="number" id="ipt_qtd_combus"> <br> <br>
+    hora da venda: <input type="number" id="ipt_hr_venda"> <br> <br>
+    <button onclick="analisar()">analisar venda</button>
+    <div id="exibir"></div>
+</body>
+<script>
+    let tipo_combustivel="";
+    let hora_venda=0;
+    let qtd_combustivel=0;
+    let contador_venda=0;
+    let contador_desconto=0;
+    let contador_numero_venda=0;
+    let mensagem = "";
+
+    function analisar() {
+        tipo_combustivel = ipt_tipo_combustivel.value
+        hora_venda= Number(ipt_hr_venda.value)
+        qtd_combustivel= Number(ipt_qtd_combus.value)
+        let conta_flu =0;
+        let desconto_flu=0
+        let valor_com_desconto=0;
+
+        if (tipo_combustivel == "etanol") {
+            
+            conta_flu = 4.44 * qtd_combustivel
+            contador_venda += conta_flu
+            valor_com_desconto = conta_flu
+
+            if ((hora_venda >=0 && hora_venda<=6 || hora_venda >=21 && hora_venda<=24) && qtd_combustivel >= 20) {
+                desconto_flu = conta_flu * 0.048
+                contador_desconto += desconto_flu
+                valor_com_desconto =conta_flu - desconto_flu
+                contador_venda -= desconto_flu
+            }
+        }
+
+        mensagem += `venda;${valor_com_desconto.toFixed(2)}R$ <br> desconto horário:${desconto_flu.toFixed(2)}R$ <br> tipo combustível:${tipo_combustivel} <br><br> ${contador_venda}<br>`;
+        exibir.innerHTML= mensagem
+    }
+
+</script>
+</html>
+
+
+ 
+
+gasolina - 6.49
+disel - 4.39
+etanol- 4.44
