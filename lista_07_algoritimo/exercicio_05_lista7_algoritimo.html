@@ -12,6 +12,16 @@
 </body>
 <script>
     let voltas =0;
+    let mensagem ="";
+    function iniciar() {
+        voltas=Number(ipt_voltas.value);
+        let i=1;
+        while (i <= voltas) {
+            mensagem += `<br>O carro está na ${i} volta`
+            i++
+        }
+        exibir.innerHTML=`${mensagem}`
+    }
     
 </script>
 </html>
