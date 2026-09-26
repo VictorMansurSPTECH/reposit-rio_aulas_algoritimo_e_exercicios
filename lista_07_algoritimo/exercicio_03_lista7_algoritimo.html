@@ -11,14 +11,14 @@
     <div id="exibir"></div>
 </body>
 <script>
-    let  frase="";
-    let contagem= 7;
+    let frase="";
+    let contagem= 0;
     let mensagem =""
     function analisar() {
         frase= ipr_mensagem.value
-        while (contagem >= 0) {
-            mensagem += `${contagem}-${frase}`
-            contagem--
+        while (contagem <=7 ) {
+            contagem++
+            mensagem += `<br>${contagem}-${frase}`
         }
         exibir.innerHTML=`${mensagem} <br>`
     }
