@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+     Receba do usuário um número (tem que ser entre 0 e 200): <input type="number" id="ipt_numero"> <br> 
+    <button onclick="multiplos7()">Viva o 7!</button> <br>
+    <div id="exibir"></div>
+</body>
+<script>
+    function multiplos7() {
+        let mensagem = "";
+        let numero = Number(ipt_numero.value);
+        let i = 0;
+        
+        if (numero <0 || numero>200) {
+            alert("Valor incorreto")
+        } else {
+            while (i <=numero ) {
+            if (i %7==0) {
+                mensagem += `<br>${i}`;
+            }
+            i++;
+        }
+        }
+        exibir.innerHTML = mensagem;
+    }
+</script>
+</html>
