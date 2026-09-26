@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Pergunte ao usuário um número: <input type="number" id="ipt_numero">  <br>
+    Pergunte ao usuário uma frase: <input type="text" id="ipt_frase"> <br>  
+    <button onclick="analisar()">Papagaio</button> <br>
+    <div id="exibir"></div>
+</body>
+<script>
+    let numero=0;
+    let frase=0;
+    let mensagem="";
+    let contador=0;
+    
+
+    function analisar() {
+
+        frase=ipt_frase.value
+        numero=Number(ipt_numero.value)
+
+        while (contador < numero) {
+            mensagem += ` ${frase}`
+            contador ++
+        }
+        exibir.innerHTML = mensagem;
+    }
+</script>
+</html>

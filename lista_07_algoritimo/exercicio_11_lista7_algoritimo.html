@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+ qual a tabuada que o usuário quer ver na tela (2 a 9): <select id="ipt_numero">
+    <option>2</option>
+    <option>3</option>
+    <option>4</option>
+    <option>5</option>
+    <option>6</option>
+    <option>7</option>
+    <option>8</option>
+    <option>9</option>
+ </select>
+    <button onclick="tabuada()">Ver Tabuada</button> <br>
+    <div id="exibir"></div>
+</body>
+<script>
+function tabuada() {
+    let mensagem = "";
+    let numero = Number(ipt_numero.value);
+    let contador = 1;
+
+    if (numero < 2 || numero > 9) {
+        alert("Valor incorreto")
+    } else {
+        while (contador <= 10) {
+            mensagem += `<br>${numero} X ${contador} = ${numero * contador}`;
+            contador++
+        }
+    }
+    exibir.innerHTML = mensagem;
+}
+</script>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Solicite um intervalo crescente de valores numéricos: <input type="text" id="ipt_intervalo"> <br>
+    <button onclick="analisar()">S2 Pares</button> <br>
+    <div id="exibir"></div>
+</body>
+<script>
+    let ordem =0;
+    let mensagem="";
+    
+
+    function analisar() {
+        ordem= Number(ipt_intervalo.value);
+        let contador=0;
+
+        while (contador <= ordem) {
+            if (contador %2==0) {
+                mensagem += `<br>${contador}`;
+            }
+            contador++
+        }
+        exibir.innerHTML = mensagem;
+    }
+</script>
+</html>
