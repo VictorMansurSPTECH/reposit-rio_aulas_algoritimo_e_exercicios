@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Pergunte o nome da pessoa que o usuário mais ama na vida: <input type="text" id="ipt_pessoa"> <br>
+    Pergunte o quanto o usuário a ama (um número inteiro): <input type="text" id="ipt_qtd_vezes"> <br>
+    <button onclick="analisar()">Expressar amor</button> <br>
+    <div id="exibir"></div>
+</body>
+<script>
+    let frase="";
+    let contagem="";
+    let mensagem="";
+    function analisar() {
+        frase = ipt_pessoa.value
+        contagem = Number(ipt_qtd_vezes.value)
+        let i = 1
+        while (i <= contagem) {
+            mensagem += `<br>${i}-${frase}, eu te amo! Sempre lembre disso`
+            i++
+        }
+        exibir.innerHTML = `${mensagem}`
+    }
+</script>
+</html>
