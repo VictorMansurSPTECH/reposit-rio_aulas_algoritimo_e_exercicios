@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Papagaio Repetitivo</title>
+</head>
+<body>
+    Pergunte ao usuário um número: <input type="number" id="ipt_numero"> <br>
+    Pergunte ao usuário uma frase: <input type="text" id="ipt_frase"> <br>  
+    <button onclick="analisar()">Papagaio Repetitivo</button> <br>
+    <div id="exibir"></div>
+
+    <script>
+        function analisar() {
+            let frase = ipt_frase.value;
+            let numero = Number(ipt_numero.value);
+            let mensagem = "";
+
+            let i = 1; // Contador da linha atual
+            while (i <= numero) {
+                mensagem += `${i} - `;
+
+
+                let j = 0; // Contador de repetição da frase na linha
+                while (j < i) {
+                    mensagem += `${frase} `;
+
+                    j++;
+                }
+
+                mensagem += "<br>"; // Quebra de linha ao final de cada linha
+
+                i++;
+            }
+
+            exibir.innerHTML = mensagem;
+        }
+    </script>
+</body>
+</html>
