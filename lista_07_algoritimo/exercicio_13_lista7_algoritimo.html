@@ -17,20 +17,20 @@
             let numero = Number(ipt_numero.value);
             let mensagem = "";
 
-            let i = 1; // Contador da linha atual
-            while (i <= numero) {
-                mensagem += `${i} - `;
+            let contador_de_controle = 1; // Contador da linha atual
+            while (contador_de_controle <= numero) {
+                mensagem += `${contador_de_controle} - `;
 
-                let j = 0; // Contador de repetição da frase na linha
-                while (j < i) {
+                let contador_2 = 0; // Contador de repetição da frase na linha
+                while (contador_2 < contador_de_controle) {
                     mensagem += `${frase} `;
 
-                    j++;
+                    contador_2++;
                 }
 
                 mensagem += "<br>"; // Quebra de linha ao final de cada linha
 
-                i++;
+                contador_de_controle++;
             }
 
             exibir.innerHTML = mensagem;

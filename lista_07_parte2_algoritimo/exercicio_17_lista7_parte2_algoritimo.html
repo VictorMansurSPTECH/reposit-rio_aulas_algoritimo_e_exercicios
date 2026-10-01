@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Solicite ao usuário a quantidade elefantes; : <input type="number" id="ipt_elefantes"> <br>
+    <button onclick="exibir_cancao()">Atazanar a médium</button> <br>
+    <div id="exibir"></div>
+</body>
+<script>
+
+    function exibir_cancao() {
+        let elefantes = Number(ipt_elefantes.value);
+        let mensagem = "";
+        let incomodam = "";
+        let contador = 1;
+
+        while (contador <= elefantes) {
+            if (contador == 1) {
+                incomodam += "incomodam  ";
+                mensagem += ` ${contador} elefante incomodam muita gente! <br>`;
+            }else{
+                incomodam += "incomodam  ";
+                mensagem += ` ${contador} elefantes ${incomodam}muito mais! <br>`;
+            }
+            
+            contador++;
+        }
+
+        exibir.innerHTML = mensagem;
+    }
+
+</script>

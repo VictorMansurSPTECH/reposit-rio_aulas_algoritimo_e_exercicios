@@ -21,31 +21,22 @@
         inicio= Number(ipt_inicio.value);
         fim = Number(ipt_fim.value);
         let i=0;
-        let calc =0;
-
-        if (numero <3 || numero >13) {
-            alert("valor inválido"); // verificação do número divisor 
-        } else {
-            i= inicio
+        i= inicio
             while (i <= fim) {
                 i++
-                calc_mult_3 = i%numero==0;
+                calc_mult_3 = i%3==0;
+                calc_mult_5 = i%5==0;
                 if (calc_mult_3 == true) {
-                    mensagem += `${i} não é divisivel pelo número ${numero}<br>`
+                    mensagem += `É TRI! <br>`
                     
+                }else if (calc_mult_5 == true){
+                    mensagem += `É PENTA! <br>`
+                }else{
+                    mensagem += `É TRI!É PENTA! <br>`
                 }
             }
-        }
         exibir.innerHTML=mensagem
     }
 </script>
 </html>
-
-a) Deve ter dois campos para o usuário informar o intervalo crescente de números
-
-b) Deve ter um botão chamado "Curto 3 e 5!"
-
-c) Ao clicar nesse botão, devem aparecer QUASE todos os números entre o intervalo informado, porém...
-
-d) Se o número for múltiplo de 3, ao invés do número exiba "É TRI!". Se o número for múltiplo de 5, ao invés do número exiba "É PENTA!". Se o número for múltiplo de 3 e também de 5, ao invés do número exiba "É TRI!É PENTA!".
 

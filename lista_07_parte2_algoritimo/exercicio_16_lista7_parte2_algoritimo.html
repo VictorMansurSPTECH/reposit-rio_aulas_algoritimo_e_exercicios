@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rotina mensal</title>
+</head>
+<body>
+    De quantos em quantos dias o usuário faz musculação: <input type="number" id="ipt_dias"> <br>
+    <button onclick="exibir_rotina()">Exibir rotina mensal</button> <br>
+    <div id="exibir"></div>
+</body>
+
+<script>
+    function exibir_rotina() {
+        let dias = Number(ipt_dias.value);
+        let mensagem = "";
+        let contador = 0;
+        let mes = 30;
+
+
+        while (contador < mes) {
+            contador++;
+            mensagem += `Dia ${contador} - `;
+
+            if ((contador -1)  % dias == 0) {
+                mensagem += `Musculação <br>`;
+            } else {
+                mensagem += `Comer, dormir etc <br>`;
+            }
+        }
+
+        exibir.innerHTML = mensagem;
+    }
+</script>
+</html>
