@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    insira um numero entre 10 e 500: <input type="number" id="ipt_numeros"> <br>
+    <button onclick="analisar()">Somar pares</button> <br>
+    <div id="exibir"></div>
+</body>
+
+<script>
+    let numeros=0;
+    let mensagem="";
+
+    function analisar() {
+        numeros=Number(ipt_numeros.value);
+        let somatorio_pares=0;
+        let contador1=0;
+        let lista=[]
+        let verf_insercao= numeros < 10 || numeros>500
+        if (verf_insercao == true) {
+            alert("valores baixos ou altos demais")
+        }else{
+            
+            while (contador1 < numeros) {
+                contador1++
+                
+                if (contador1%2==0) {
+                    lista.push(contador1)
+                    somatorio_pares += contador1
+                    mensagem += `Soma dos pares: ${lista} sendo ${somatorio_pares} a soma de todos os números exibidos <br> `
+                }
+                
+            }
+            exibir.innerHTML= mensagem
+            mensagem="";
+
+        }
+    }
+</script>
+</html>
+
