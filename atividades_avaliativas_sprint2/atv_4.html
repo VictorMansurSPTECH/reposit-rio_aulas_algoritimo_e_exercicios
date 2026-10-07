@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Distância inicial do aluno (em km): <input type="number" id="ipt_distancia_inicial"> <br> <br>
+    O percentual de aumento semanal desejado (de 0 a 100): <input type="number" id="ipt_percentual_semana"><br> <br>
+    A meta de distância semanal (em km): <input type="number" id="ipt_distancia_semanal"><br> <br>
+    O número máximo de semanas do plano: <input type="number" id="ipt_num_maximo_semanas"><br> <br>
+    <button onclick="analisar()">gerar planilha</button> <br>
+    <div id="exibir"></div>
+</body>
+<script>
+    let distancia_inicial=0;
+    let percentual_semanal=0;
+    let meta_km_semana=0;
+    let num_max_semanas_plano=0;
+    let mensagem="";
+
+    function analisar() {
+        distancia_inicial=Number(ipt_distancia_inicial.value);
+        percentual_semanal= Number(ipt_percentual_semana.value);
+        meta_km_semana= Number(ipt_distancia_semanal.value);
+        num_max_semanas_plano= Number(ipt_num_maximo_semanas.value);
+        let calculo_percentual = percentual_semanal /100
+        let contador_semana=0;
+        let contador_km=0;
+
+        let verf1= distancia_inicial <0  || meta_km_semana==distancia_inicial || (num_max_semanas_plano < 1 || num_max_semanas_plano>24)
+        let verf2=percentual_semanal <1 || percentual_semanal>10
+
+            if (verf1 == true) {
+                exibir.innerHTML=`erro ao preencher os campos`
+            }else if(verf2 ==true){
+                exibir.innerHTML=`meta de crescimento muito alta risco de lesões sérias!!!`
+            }else{
+                let acumulo_porcentagem=0;
+                let calculo_meta_batida=0;
+                contador_km = distancia_inicial
+                while (contador_semana < num_max_semanas_plano) {
+
+                    acumulo_porcentagem= contador_km * calculo_percentual
+                    contador_km = contador_km + acumulo_porcentagem
+                    calculo_meta_batida=(contador_km/meta_km_semana)*100
+                    
+
+                    if (contador_semana ==1) {
+                        mensagem += `SEMANA 1 - moderado - ${contador_km.toFixed(1)} km (${(calculo_meta_batida).toFixed(2)}% da meta) <br> <br>`
+                    }
+                    contador_semana++
+                    
+                    mensagem += `SEMANA ${contador_semana} - MENSAGEM DO TIPO DE TREINO - ${contador_km.toFixed(1)} km (${(calculo_meta_batida).toFixed(2)}% da meta) <br> <br>`
+                    
+                }
+                
+            }
+            exibir.innerHTML=mensagem
+        }
+        </script>
+</html>

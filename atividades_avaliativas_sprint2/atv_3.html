@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doceria gourmet</title>
+</head>
+<body>
+    quatidade Macarons: <input type="number" id="ipt_macarons"> <br>
+    preço de vendas do macarons: <input type="number" id="ipt_preco_macarons"> <br>
+
+    quatidade Brigadeiros : <input type="number" id="ipt_brigadeiro"> <br>
+    preço de vendas do brigadeio : <input type="number" id="ipt_preco_brigadeiro"> <br>
+
+    quatidade cupkake : <input type="number" id="ipt_cupkake"> <br>
+    preço de vendas do cupkake : <input type="number" id="ipt_preco_cupkake"> <br>
+
+    quatidade Cheesecakes : <input type="number" id="ipt_cheesecakes"> <br>
+    preço de vendas do Cheesecakes : <input type="number" id="ipt_preco_cheesecakes"> <br>
+
+    <button onclick="verificar()">verificar vendas </button> <br>
+    <div id="exibir"></div>
+</body>
+
+<script>
+    let macaron=0;
+    let brigadeiro=0;
+    let cupkake=0;
+    let Cheesecakes=0;
+    
+    let preco_macaron=0;
+    let preco_brigadeiro=0;
+    let preco_cupkake=0;
+    let preco_cheesecakes=0;
+
+    let mensagem ="";
+    function verificar() {
+        macaron = Number(ipt_macarons.value);
+        brigadeiro = Number(ipt_brigadeiro.value);
+        cupkake = Number(ipt_cupkake.value);
+        Cheesecakes = Number(ipt_cheesecakes.value);
+
+        preco_macaron = Number(ipt_preco_macarons.value);
+        preco_brigadeiro = Number(ipt_preco_brigadeiro.value);
+        preco_cupkake = Number(ipt_preco_cupkake.value);
+        preco_cheesecakes = Number(ipt_preco_cheesecakes.value);
+
+        let verfi_numero_negativos = (macaron >0 || brigadeiro>0 || cupkake>0 || Cheesecakes>0 || preco_macaron>0 || preco_brigadeiro>0 || preco_brigadeiro>0 || preco_cupkake>0|| preco_cheesecakes>0)
+        let contador_macaron = 0
+        if (verfi_numero_negativos == false) {
+            mensagem = `erro todos os número são negativos`;
+            exibir.innerHTML= mensagem
+        } else {
+
+            let vendas = macaron+ brigadeiro+ cupkake+ Cheesecakes;
+            let contador=0
+            while (contador<=vendas) {
+                contador++
+
+                while (contador_macaron < macaron) {
+                    mensagem+= `Venda ${contador} - IMG macaron - ${macaron} <br>`
+                    contador_macaron++
+                }
+            }
+        }
+        exibir.innerHTML= mensagem
+    }
+
+</script>
+</html>
+
