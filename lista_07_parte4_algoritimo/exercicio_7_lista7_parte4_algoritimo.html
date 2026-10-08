@@ -6,6 +6,33 @@
     <title>Document</title>
 </head>
 <body>
-    
+    insira um número que será um limite de contagem: <input type="number" id="ipt_numero_limite"> <br> <br>
+    insira um outro número para teste de divisibilidade: <input type="number" id="ipt_numero_pTeste"> <br>
+    <button onclick="analisar()">Contar números</button> <br>
+    <div id="exibir"></div>
 </body>
+<script>
+    let numero_limite=0;
+    let numero_pTeste=0;
+    let lista=[];
+    let contador=1;
+    let mensagem="";
+
+    function analisar() {
+        numero_limite=Number(ipt_numero_limite.value);
+        numero_pTeste=Number(ipt_numero_pTeste.value);
+        let qtd_multiplos=0;
+
+
+        while (contador < numero_limite) {
+            contador++
+            if (contador%numero_pTeste==0) {
+                qtd_multiplos++
+                lista.push(contador)
+            }
+        }
+        mensagem += `A Quantidade de Múltiplos é: ${qtd_multiplos}, sendo ${qtd_multiplos} a quantidade encontrada de números múltiplos do número informado pelo usuário <br>`
+        exibir.innerHTML=mensagem;
+    }
+</script>
 </html>
