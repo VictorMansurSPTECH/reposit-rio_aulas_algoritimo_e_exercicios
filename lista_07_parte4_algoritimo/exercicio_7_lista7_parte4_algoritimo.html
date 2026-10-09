@@ -29,8 +29,10 @@
             if (contador%numero_pTeste==0) {
                 qtd_multiplos++
                 lista.push(contador)
+                
             }
         }
+        console.log(lista)
         mensagem += `A Quantidade de Múltiplos é: ${qtd_multiplos}, sendo ${qtd_multiplos} a quantidade encontrada de números múltiplos do número informado pelo usuário <br>`
         exibir.innerHTML=mensagem;
     }
