@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    frase: <input type="text" id="ipt_frase"> <br>
+    <button onclick="analisar()">Contar vogais</button> <br>
+    <div id="exibir"></div>
+</body>
+<script>
+
+    let lista_vogais=["a","e","i","o","u"];
+    let frase="";
+    let contador_vogal=0;
+    let contador_nao_vogais=0;
+    let lista_vogais_detectadas=[];
+    let lista_nao_vogais_detectadas=[];
+
+    function analisar() {
+        lista_nao_vogais_detectadas=[];
+        lista_vogais_detectadas=[];
+        contador_vogal=0;
+        contador_nao_vogais=0;
+        exibir.innerHTML="";
+        frase = (ipt_frase.value);
+        let frase_minuscula= frase.toLowerCase();
+
+        for(let contador=0;contador < frase_minuscula.length;contador++){
+
+            if (frase_minuscula[contador]== "a" || frase_minuscula[contador]=="e"||frase_minuscula[contador]=="i"||frase_minuscula[contador]=="o" || frase_minuscula[contador]=="u") {
+                contador_vogal ++;
+                lista_vogais_detectadas.push(frase_minuscula[contador]); 
+                exibir.innerHTML += `A letra ${lista_vogais_detectadas[contador_vogal - 1]} é vogal  <br>`;
+            }else if(frase_minuscula[contador] == " "){
+                    exibir.innerHTMl=`Espaço não é caractere`;
+                }else{
+                    contador_nao_vogais ++;
+                    lista_nao_vogais_detectadas.push(frase_minuscula[contador]);
+                    exibir.innerHTML += `A letra ${lista_nao_vogais_detectadas[contador_nao_vogais - 1]} não é vogal <br>`;
+            }
+        }
+
+    }
+
+</script>
+</html>
