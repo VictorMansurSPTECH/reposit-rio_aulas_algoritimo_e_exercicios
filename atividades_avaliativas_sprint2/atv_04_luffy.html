@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Quantidade de batalhas: <input type="number" id="ipt_qtd_batalhas"> <br>
+    Quantidade de marinheiros em cada batalha: <input type="number" id="ipt_qtd_marinheiros"> <br>
+    Quantidade de carnes disponíveis: <input type="number" id="ipt_qtd_carnes"> <br>
+    <button onclick="calcular()">Calcular</button>
+    <div id="exibir"></div>
+</body>
+<script>
+    let  qtd_batalhas=0;
+    let  qtd_marinheiros=0;
+    let  qtd_carnes=0;
+    let mensagem="";
+    
+    function calcular() {
+        qtd_batalhas= Number(ipt_qtd_batalhas.value);
+        qtd_marinheiros= Number(ipt_qtd_marinheiros.value);
+        qtd_carnes= Number(ipt_qtd_carnes.value);
+        
+        let soma_qtd_marinheiros=0;
+        let contador_batalhas=1;
+        for(let vida_luffy=100; vida_luffy >=0; contador_batalhas++) {
+            if(contador_batalhas > qtd_batalhas) {
+                mensagem = `Resultado : Luffy saiu vitorioso! <br>
+                quantidade de carnes restantes: ${qtd_carnes} <br>
+                quantidade de marinheiros derrotados: ${soma_qtd_marinheiros} <br>
+                Energia restante do Luffy: ${vida_luffy} <br>
+                `;
+                break;
+            }else{
+                vida_luffy -=10
+                let batalha_marinheiros= qtd_marinheiros * 5
+                vida_luffy -= batalha_marinheiros
+                soma_qtd_marinheiros += qtd_marinheiros;
+                let sobra_marinheiros = qtd_marinheiros - (vida_luffy / 5);
+                for(let i = 0; i < sobra_marinheiros; i++) {
+
+                }
+                
+                if(vida_luffy <= 0 && qtd_carnes > 0) {
+                    vida_luffy = 0;
+                    qtd_carnes--;
+                    vida_luffy += 100;
+                    
+                }else if(vida_luffy <= 0 && qtd_carnes <= 0) {
+                    
+                    mensagem = `Luffy perdeu a batalha sobraram ${i} marinheiros. <br>
+                    quantidade de carnes restantes: ${qtd_carnes} <br>
+                    quantidade de marinheiros derrotados: ${soma_qtd_marinheiros} <br>
+                    Energia restante do Luffy: ${vida_luffy} <br>
+                    `;
+                    break;
+
+                }else{
+                    continue;
+                }
+            }
+            
+        }
+        exibir.innerHTML = mensagem;
+    }
+</script>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acompanhando a Poupança</title>
+</head>
+<body>
+    informa quantos depósitos você fez no banco: <input type="number" id="ipt_qtd_deposito"> <br> <br>
+    informa o valor de cada depósito, pois ele sempre depositava exatamente o mesmo valor: <input type="number" id="ipt_valor_deposito_mes"> <br> <br>
+    <button onclick="analisar()">Acompanhar grana</button> <br>
+    <div id="exibir"></div>
+
+    
+</body>
+<script>
+    let qtd_deposito=0;
+    let valor_deposito_mes=0;
+
+    function analisar() {
+        exibir.innerHTML="";
+        qtd_deposito= Number(ipt_qtd_deposito.value);
+        valor_deposito_mes=Number(ipt_valor_deposito_mes.value);
+        let saldo=0;
+
+        if (qtd_deposito <=0 || valor_deposito_mes <= 0) {
+            exibir.innerHTML=`valores dos campos não pode ser negativo`;
+        } else {
+            for(let contador=1;contador <= qtd_deposito; contador++){
+                saldo += valor_deposito_mes;
+                exibir.innerHTML +=`${contador}º Mês: R$ ${saldo} <br>`;
+
+                if (contador == 3 || contador ==6) {
+                    saldo = saldo + (saldo * 0.01)
+                    exibir.innerHTML +=`${contador}º Mês: R$ ${saldo} <img style="height: 15px; width: 15px;"  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRbJ-Rs3lq5od2xb5Ssay3iOxnPaNOLJ5vbxh_Kq99raPjtkQvpEx-AvUo&s=10" alt="estrela"><br> `;
+                }
+
+
+                if (contador >= qtd_deposito) {
+                    
+                    exibir.innerHTML +=`Total guardado: R$ ${saldo} <br>`;
+                }
+            }
+        }
+    }
+</script>
+</html>
