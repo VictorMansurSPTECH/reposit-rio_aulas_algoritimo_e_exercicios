@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exercício 1</title>
+</head>
+<body>
+    quantas pessoas vão entrar no carro: <input type="number" id="ipt_quantidade_pessoas"> <br> <br>
+    <button onclick="analisar()">analisar</button> <br>
+    <div id="exibir"></div> <br>
+
+</body>
+
+<script>
+    let quantidade_pessoa=0;
+    let mensagem="";
+
+    function analisar() {
+        mensagem="";
+        quantidade_pessoa= Number(ipt_quantidade_pessoas.value);
+
+        if (quantidade_pessoa <=0) {
+            mensagem +=`O número de pessoas não pode ser negativo `;
+        } else {
+
+        for(let contador=1;contador <= quantidade_pessoa; contador++){
+            if (contador ==1) {
+                mensagem += `entrou o ${contador}º passageiro (que é o(a) motorista) <br>`;
+            }else if (contador <=5){
+                mensagem += `entrou o ${contador}º passageiro <br>`;
+
+
+            }else{
+                mensagem += `O ${contador}º passageiro terá que esperar! <br>`;
+            }
+        }
+
+        }
+
+        exibir.innerHTML=mensagem;
+    }
+</script>
+</html>
