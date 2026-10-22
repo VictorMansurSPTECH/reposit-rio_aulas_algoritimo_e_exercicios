@@ -33,13 +33,11 @@
             if (frase_minuscula[contador]== "a" || frase_minuscula[contador]=="e"||frase_minuscula[contador]=="i"||frase_minuscula[contador]=="o" || frase_minuscula[contador]=="u") {
                 contador_vogal ++;
                 lista_vogais_detectadas.push(frase_minuscula[contador]); 
-                exibir.innerHTML += `A letra ${lista_vogais_detectadas[contador_vogal - 1]} é vogal  <br>`;
-            }else if(frase_minuscula[contador] == " "){
-                    exibir.innerHTMl=`Espaço não é caractere`;
-                }else{
-                    contador_nao_vogais ++;
-                    lista_nao_vogais_detectadas.push(frase_minuscula[contador]);
-                    exibir.innerHTML += `A letra ${lista_nao_vogais_detectadas[contador_nao_vogais - 1]} não é vogal <br>`;
+                exibir.innerHTML += `A letra "${lista_vogais_detectadas[contador_vogal - 1]}" é vogal <br>`;
+            }else{
+                contador_nao_vogais ++;
+                lista_nao_vogais_detectadas.push(frase_minuscula[contador]);
+                exibir.innerHTML += `A letra "${lista_nao_vogais_detectadas[contador_nao_vogais - 1]}" não é vogal <br>`;
             }
         }
 
