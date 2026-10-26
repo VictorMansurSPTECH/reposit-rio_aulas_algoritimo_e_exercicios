@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex2</title>
+</head>
+<body>
+    diga algo sobre algoritimos:<input type="text" id="ipt_frase_alg"> <br>
+    <button onclick="Diga_algo()">Diga algo sobre a matéria de Algoritmos</button> <br>
+    <div id="exibir"></div>
+</body>
+<script>
+    let frase="";
+
+    function Diga_algo() {
+        frase=ipt_frase_alg.value;
+
+        for(let contador=1;contador<=7;contador++){
+            exibir.innerHTML+=`${contador}--${frase} <br>`;
+        }
+    }
+</script>
+</html>

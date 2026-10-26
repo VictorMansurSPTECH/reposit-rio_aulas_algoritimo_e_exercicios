@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex4</title>
+</head>
+<body>
+    nome da pessoa que o usuário mais ama na vida:<input type="text" id="ipt_frase_alg"> <br>
+    diga a quantidade de vezes que essa frase será repetida: <input type="number" id="ipt_repeticao"> <br>
+    <button onclick="Diga_algo()">Diga algo sobre alguma coisa</button> <br>
+    <div id="exibir"></div>
+</body>
+<script>
+    let frase="";
+    let vezes="";
+    let mensagem="";
+
+    function Diga_algo() {
+        mensagem="";
+        vezes=Number(ipt_repeticao.value);
+        frase=ipt_frase_alg.value;
+
+        for(let contador=1;contador<=vezes;contador++){
+            mensagem+=`${contador}-- ${frase}, eu te amo! Sempre lembre disso! <br>`
+        }
+        exibir.innerHTML= mensagem;
+    }
+</script>
+</html>
