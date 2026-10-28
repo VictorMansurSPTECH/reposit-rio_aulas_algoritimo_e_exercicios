@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exercício 3</title>
+</head>
+<body>
+    nome do aluno: <input type="text" id="ipt_alunos"> <br>
+    <button onclick="analisar()">cadastrar aluno</button> <br>
+    <div id="exibir"></div>
+</body>
+<script>
+    let lista_alunos=[];
+    let mensagem="";
+
+    function analisar() {
+        mensagem="";
+        lista_alunos.push(ipt_alunos.value);
+
+
+        for(let i=lista_alunos.length -1; i >=0;i--){
+            mensagem +=`${i + 1}°---aluno é: ${lista_alunos[i]} <br>`;
+        }
+        exibir.innerHTML=mensagem;
+    }
+
+</script>
+</html>
+<!-- Crie um programa o qual:  
+<!-- a) O usuário cadastre nomes de alunos;  
+
+b) Porém, na medida que vai cadastrando, aparecem um abaixo do outro na ordem inversa em que foram cadastrados (ou seja, o último sempre fica no topo, o penúltimo em abaixo dele e assim por diante).   -->

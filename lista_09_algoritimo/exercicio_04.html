@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    digite o nome do projeto: <input type="text" id="ipt_projeto"> <br>
+    <button onclick="cadastrar()">cadastrar</button> <br>
+    <button onclick="mostrar()">Mostrar projetos</button> <br>
+    <div id="exibir"></div>
+
+</body>
+<script>
+    let lista_projetos=[];
+    let contador_projetos=0;
+    let mensagem="";
+    function cadastrar() {
+        lista_projetos.push(ipt_projeto.value);
+        contador_projetos++;
+    }
+    function mostrar() {
+        let mensagem=""
+        let ax_status
+        for(let i=0; i < lista_projetos.length;i++){
+            if (contador_projetos>=0 && contador_projetos<4) {
+                ax_status="Júnior"
+            } else if( contador_projetos>4 && contador_projetos<12){
+                ax_status="Pleno"
+            }else{         
+                ax_status="Sênior" 
+            }
+                mensagem = `<br> 
+                 Você já fez ${contador_projetos} projetos. Por isso você é um profissional Sênior  <br>
+                 ${contador_projetos} é a quantidade de projetos e ${ax_status} é seu nível de experiência, segundo estas regras:  <br>
+                 0 a 4: Júnior  <br>
+                 5 a 12: Pleno  <br>
+                 13 ou mais: Sênior <br>
+                 <br>
+                 `;     
+
+            for (let i = lista_projetos.length -1; i >=0; i--) {
+                mensagem += `Projeto ${i +1}: ${lista_projetos[i]} <br>`;
+            }
+
+            exibir.innerHTML=mensagem
+        }
+    }
+</script>
+</html>
