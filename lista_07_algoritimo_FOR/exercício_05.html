@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex4</title>
+</head>
+<body>
+    quantas voltas um carro dará numa corrida  : <input type="number" id="ipt_repeticao"> <br>
+    <button onclick="corrida()">Iniciar corrida!</button> <br>
+    <div id="exibir"></div>
+</body>
+<script>
+    let vezes="";
+    let mensagem="";
+
+    function corrida() {
+        mensagem="";
+        vezes=Number(ipt_repeticao.value);
+
+        for(let contador=1;contador<=vezes;contador++){
+            mensagem+=`Carro dando a ${contador}ª volta  <br>`
+
+            if (contador == vezes) {
+                mensagem +="A corrida acabou"
+            }
+        }
+        exibir.innerHTML= mensagem;
+    }
+</script>
+</html>

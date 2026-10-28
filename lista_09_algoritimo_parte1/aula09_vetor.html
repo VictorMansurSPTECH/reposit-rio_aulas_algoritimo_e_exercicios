@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt_br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vetor</title>
+</head>
+
+<body>
+    <h2>Interação com o Vetor</h2>
+    Qual a fruta: <input id="ipt_fruta"> <br>
+    <button onclick="incluir()">Incluir</button>
+    <button onclick="pesquisar()">Pesquisar</button>
+    <button onclick="alterar()">Alterar</button>
+    <button onclick="excluir()">Excluir</button> <br><br>
+    <div id="div_msg"></div>
+</body>
+<script>
+
+    let ax_frutas = [];
+
+    function incluir() {
+        ax_frutas.push(ipt_fruta.value);
+        div_msg.innerHTML = `NOSSO VETOR ESTÁ ASSIM: <br><br>
+        Quantidade de ocorrências = ${ax_frutas.length} <br>
+        O vetor está assim: ${ax_frutas} <br>
+        A Primeira ocorrência é: ${ax_frutas[0]} <br>
+        A terceira ocorrência é: ${ax_frutas[2]} <br>
+        A última ocorrência é: ${ax_frutas[ax_frutas.length - 1]} <br><br>
+        NOSSA LISTA ESTÁ ASSIM: <br>`
+
+        for (let i = 0; i < ax_frutas.length; i++) {
+            div_msg.innerHTML += `A fruta que está na ${i + 1}ª 
+            ocorrência é a: ${ax_frutas[i]} <br>`;
+        }
+        div_msg.innerHTML += `<br> A LISTA INVERTIDA É: <br>`
+        for (let i = ax_frutas.length-1; i >= 0; i--) {
+            div_msg.innerHTML += `A fruta que está na ${i + 1}ª 
+            ocorrência é a: ${ax_frutas[i]} <br>`;
+        }
+    }
+
+    function pesquisar() {
+        let ax_cont = 0;
+        div_msg.innerHTML = `RESULTADO DA PESQUISA <br><br>`;
+        for (let i = 0; i < ax_frutas.length; i++) {
+            if (ax_frutas[i] == ipt_fruta.value) {
+                ax_cont++;
+                div_msg.innerHTML += `A fruta ${ax_frutas[i]} 
+                    foi encontrada na ${i+1} posição <br>`
+            } 
+        }
+        if (ax_cont == 0) {
+            div_msg.innerHTML += `A fruta ${ipt_fruta.value}
+                não foi encontrada na lista`
+        }
+    }
+
+    function alterar() {
+        let ax_fruta_nova = prompt ('Entre com o novo nome da fruta')
+        let ax_cont = 0;
+        div_msg.innerHTML = `RESULTADO DA ALTERAÇÃO <br><br>`;
+        for (let i = 0; i < ax_frutas.length; i++) {
+            if (ax_frutas[i] == ipt_fruta.value) {
+                ax_cont++;
+                ax_frutas[i] = ax_fruta_nova
+                div_msg.innerHTML += `A fruta ${ipt_fruta.value} 
+                    foi encontrada na ${i+1}ª posição e alterada
+                    para ${ax_fruta_nova}<br>`
+            } 
+        }
+        if (ax_cont == 0) {
+            div_msg.innerHTML += `A fruta ${ipt_fruta.value}
+                não foi encontrada na lista`
+        }
+
+    }
+
+    function excluir() {
+
+    }
+
+</script>
+
+</html>
